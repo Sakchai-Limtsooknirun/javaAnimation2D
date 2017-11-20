@@ -26,8 +26,5 @@ public class ActionTranslationY implements Animation {
         tty.play();
     }
 
-    @Override
-    public void Stop() {
-        tty.stop();
-    }
+
 }

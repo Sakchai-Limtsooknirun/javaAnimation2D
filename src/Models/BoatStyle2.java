@@ -3,9 +3,9 @@ package Models;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Boat_style2 extends Super_Boat {
+public class BoatStyle2 extends Super_Boat {
 
-    public Boat_style2(int x, int y) {
+    public BoatStyle2(int x, int y) {
         super(x, y);
     }
 

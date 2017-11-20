@@ -4,8 +4,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 
-public class Crab extends Super_draw {
-    public Crab(int x, int y) {
+public class CrabStyle1 extends Super_draw {
+    public CrabStyle1(int x, int y) {
         super(x, y, 900, 600);
     }
 
@@ -18,7 +18,7 @@ public class Crab extends Super_draw {
     }
 
 
-    private void drawCrab() {
+    public void drawCrab() {
         GraphicsContext gc = getGraphicsContext2D();
         Color c = Color.ORANGE;
         gc.setFill(c);
@@ -31,16 +31,18 @@ public class Crab extends Super_draw {
 
     }
 
-    private void drawLeg() {
+    public void drawLeg() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(2);
 
         //ขา
         gc.strokeArc(100, 410, 63, 60, 0, 180, ArcType.OPEN);
         gc.strokeArc(105, 415, 53, 50, 0, 180, ArcType.OPEN);
+        gc.strokeArc(110, 420, 43, 40, 0, 180, ArcType.OPEN);
+
     }
 
-    private void drawEye() {
+    public void drawEye() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(Color.BLACK);
         gc.setLineWidth(2);
@@ -49,26 +51,22 @@ public class Crab extends Super_draw {
         gc.strokeLine(125, 385, 125, 405);
         gc.strokeLine(135, 385, 135, 405);
 
+        gc.setFill(Color.RED);
         //ตา
-        gc.fillOval(122, 380, 5, 5);
-        gc.fillOval(133, 380, 5, 5);
+        gc.fillOval(118, 380, 10, 10);
+        gc.fillOval(133, 380, 10, 10);
     }
 
-    private void drawArm() {
+    public void drawArm() {
         GraphicsContext gc = getGraphicsContext2D();
         Color c = Color.ORANGE;
         gc.setFill(c);
         gc.setLineWidth(2);
 
-        //แขน
-        gc.strokeArc(90, 385, 30, 30, 180, 90, ArcType.OPEN);
-        gc.strokeArc(140, 385, 30, 30, 270, 90, ArcType.OPEN);
-
-        //กล้ามปู
-        gc.fillArc(73, 375, 30, 30, 140, 300, ArcType.ROUND);
-        gc.fillArc(160, 375, 30, 30, 100, 300, ArcType.ROUND);
-        gc.strokeArc(73, 375, 30, 30, 140, 300, ArcType.ROUND);
-        gc.strokeArc(160, 375, 30, 30, 100, 300, ArcType.ROUND);
+        gc.fillArc(73, 375, 30, 50, 140, 300, ArcType.ROUND);
+        gc.fillArc(160, 375, 30, 50, 100, 300, ArcType.ROUND);
+        gc.strokeArc(73, 375, 30, 50, 140, 300, ArcType.ROUND);
+        gc.strokeArc(159, 375, 30, 50, 100, 300, ArcType.ROUND);
 
     }
 

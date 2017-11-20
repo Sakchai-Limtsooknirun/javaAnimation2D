@@ -27,10 +27,7 @@ public class ActionTranslationX implements Animation {
         ttx.setAutoReverse(true);
         ttx.play();
     }
-    @Override
-    public void Stop() {
-        ttx.stop();
-    }
+
 
 
 }

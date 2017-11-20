@@ -25,9 +25,7 @@ public abstract class Super_draw extends Canvas {
         animation.Start();
     }
 
-    public void StopAnimation(){
-        animation.Stop();
-    }
+
 
 
 

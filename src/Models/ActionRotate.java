@@ -24,8 +24,5 @@ public class ActionRotate implements Animation {
         rt.play();
     }
 
-    @Override
-    public void Stop() {
-        rt.stop();
-    }
+
 }

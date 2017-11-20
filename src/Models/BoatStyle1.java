@@ -3,10 +3,10 @@ package Models;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Boat_style1 extends Super_Boat {
+public class BoatStyle1 extends Super_Boat {
     private String name ;
     public Color ColorFlag = Color.web("#ffff00");
-    public Boat_style1(int x, int y, String name) {
+    public BoatStyle1(int x, int y, String name) {
         super(x, y);
         this.name = name;
     }

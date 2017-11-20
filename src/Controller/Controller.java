@@ -11,23 +11,23 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Controller {
-    protected Boat_style1 boatStyle1;
-    protected Boat_style2 boatStyle2;
+    protected BoatStyle1 boatStyle1;
+    protected BoatStyle2 boatStyle2;
     protected Background bg;
     protected CoconutTree coconutTree;
-    protected Test test;
+    protected Cloud cloud , cloud2 ,cloud3 ,cloud4;
     protected TheSun theSun;
     protected Wave wave, wave2, wave3;
     protected Buoy buoy ;
+    protected CrabStyle1 crabStyle1, crabStyle12;
     private boolean statusOn;
-    ArrayList<Super_draw> ListObj;
+    private ArrayList<Super_draw> ListObj;
     private BoatKeyAction boatKeyAction ;
     @FXML
     Pane pane;
@@ -38,14 +38,20 @@ public class Controller {
         ListObj.add(wave2 = new Wave(0, 140));
         ListObj.add(wave3 = new Wave(0, 180));
         ListObj.add(wave = new Wave(0, 160));
-        ListObj.add(boatStyle2 = new Boat_style2(550, 0));
+        ListObj.add(boatStyle2 = new BoatStyle2(550, 0));
         ListObj.add(theSun = new TheSun(200, 30));
-        test = new Test(200, 200);
+        ListObj.add(cloud = new Cloud(10, 0));
+        ListObj.add(cloud2 = new Cloud(190, 0));
+        ListObj.add(cloud3 = new Cloud(400, 0));
+        ListObj.add(cloud4 = new Cloud(600, 0));
         ListObj.add(bg = new Background(0, 0));
         coconutTree = new CoconutTree(40, 300);
-        ListObj.add(boatStyle1 = new Boat_style1(0, 80, "สำราญ"));
+        ListObj.add(boatStyle1 = new BoatStyle1(0, 80, "สำราญ"));
         ListObj.add(buoy = new Buoy(-160, -20));
+        ListObj.add(crabStyle1 = new CrabStyle1(0,0));
+        ListObj.add(crabStyle12 =new CrabStyle2(300,50));
         display();
+
         boatKeyAction = new BoatKeyAction(boatStyle1);
         pane.getParent().setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -69,7 +75,6 @@ public class Controller {
                     case DOWN:
                         boatKeyAction.setSpeedDown(true);
                         break;
-
                 }
             }
         });
@@ -125,10 +130,7 @@ public class Controller {
         animationTimer.start();
 
 
-
-
     }
-
 
     public void display() {
         pane.getChildren().clear();
@@ -137,7 +139,7 @@ public class Controller {
             obj.draw();
         }
 
-        pane.getChildren().addAll(bg, theSun, wave, wave2, wave3, buoy ,boatStyle2, boatStyle1,test);
+        pane.getChildren().addAll(bg, theSun, crabStyle1, crabStyle12, wave, wave2, wave3, buoy ,boatStyle2, boatStyle1, cloud,cloud2,cloud3,cloud4);
     }
 
     @FXML
@@ -156,7 +158,14 @@ public class Controller {
         wave.StartAnimation(new ActionFade(3000, 1.0, 0, wave));
         wave2.StartAnimation(new ActionFade(2500, 1.0, 0, wave2));
         wave3.StartAnimation(new ActionFade(3000, 1.0, 0, wave3));
-
+        cloud.StartAnimation(new ActionTranslationX(50,9000,cloud));
+        cloud2.StartAnimation(new ActionTranslationX(50,9000,cloud2));
+        cloud3.StartAnimation(new ActionTranslationX(50,9000,cloud3));
+        cloud4.StartAnimation(new ActionTranslationX(50,9000,cloud4));
+        cloud.StartAnimation(new ActionFade(9000,1.0,0.1,cloud));
+        cloud2.StartAnimation(new ActionFade(9000,1.0,0.1,cloud2));
+        cloud3.StartAnimation(new ActionFade(9000,1.0,0.1,cloud3));
+        cloud4.StartAnimation(new ActionFade(9000,1.0,0.1,cloud4));
     }
     @FXML
     public void Stop(ActionEvent event) {

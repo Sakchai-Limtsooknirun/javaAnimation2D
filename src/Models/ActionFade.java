@@ -32,10 +32,6 @@ public class ActionFade implements Animation {
 
     }
 
-    @Override
-    public void Stop() {
-        ft.stop();
-    }
 
 
 }
