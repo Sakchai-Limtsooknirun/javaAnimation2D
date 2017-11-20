@@ -34,25 +34,18 @@ public class Controller {
 
     public void initialize() {
         ListObj = new ArrayList<>();
-        wave2 = new Wave(0, 140);
-        wave3 = new Wave(0, 180);
-        wave = new Wave(0, 160);
-        boatStyle2 = new Boat_style2(550, 0);
-        theSun = new TheSun(200, 30);
+        ListObj.add(wave2 = new Wave(0, 140));
+        ListObj.add(wave3 = new Wave(0, 180));
+        ListObj.add(wave = new Wave(0, 160));
+        ListObj.add(boatStyle2 = new Boat_style2(550, 0));
+        ListObj.add(theSun = new TheSun(200, 30));
         test = new Test(200, 200);
-        bg = new Background(0, 0);
+        ListObj.add(bg = new Background(0, 0));
         coconutTree = new CoconutTree(40, 300);
-        boatStyle1 = new Boat_style1(0, 80, "สำราญ");
-        buoy = new Buoy(-160, -20);
+        ListObj.add(boatStyle1 = new Boat_style1(0, 80, "สำราญ"));
+        ListObj.add(buoy = new Buoy(-160, -20));
 
-        ListObj.add(wave2);
-        ListObj.add(wave3);
-        ListObj.add(wave);
-        ListObj.add(boatStyle2);
-        ListObj.add(theSun);
-        ListObj.add(bg);
-        ListObj.add(boatStyle1);
-        ListObj.add(buoy);
+
 
 
         display();
@@ -70,7 +63,7 @@ public class Controller {
             obj.draw();
         }
 
-        pane.getChildren().addAll(bg, theSun, wave, wave2, wave3, boatStyle2, boatStyle1,test);
+        pane.getChildren().addAll(bg, theSun, wave, wave2, wave3, buoy ,boatStyle2, boatStyle1,test);
     }
 
     @FXML
