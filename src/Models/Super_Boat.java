@@ -52,6 +52,9 @@ public class Super_Boat extends Super_draw {
 
 
     }
+    public void setColor(Color color) {
+        this.ColorBody = color;
+    }
 
 
 

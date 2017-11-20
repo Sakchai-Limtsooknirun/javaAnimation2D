@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -27,6 +27,9 @@
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Button layoutX="36.0" layoutY="1.0" mnemonicParsing="false" onAction="#Start" prefHeight="27.0" prefWidth="84.0" text="Play" />
+                  <Button layoutX="658.0" layoutY="3.0" mnemonicParsing="false" onAction="#HowtoBtn" text="How to" />
+                  <Button layoutX="727.0" layoutY="3.0" mnemonicParsing="false" onAction="#InfoBtn" prefHeight="27.0" prefWidth="71.0" text="Info" />
+                  <Button layoutX="120.0" layoutY="1.0" mnemonicParsing="false" onAction="#Stop" prefHeight="27.0" prefWidth="84.0" text="Stop" />
                </children>
             </Pane>
          </children>

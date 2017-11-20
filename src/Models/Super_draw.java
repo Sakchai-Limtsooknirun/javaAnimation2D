@@ -10,7 +10,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.util.Duration;
 
 public abstract class Super_draw extends Canvas {
-
+    private Animation animation ;
     public Super_draw(int x, int y , int w ,int h) {
         setTranslateX(x);
         setTranslateY(y);
@@ -20,6 +20,14 @@ public abstract class Super_draw extends Canvas {
 
     public abstract void draw();
 
+    public void StartAnimation(Animation animation) {
+        this.animation = animation;
+        animation.Start();
+    }
+
+    public void StopAnimation(){
+        animation.Stop();
+    }
 
 
 

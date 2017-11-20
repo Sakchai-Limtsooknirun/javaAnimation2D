@@ -11,6 +11,7 @@ public class Boat_style2 extends Super_Boat {
 
     @Override
     public void draw() {
+        super.setColor(Color.rgb(0, 191, 255));
         super.draw();
         this.drawWindow();
         this.drawLadder();
