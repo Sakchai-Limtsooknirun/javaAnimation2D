@@ -55,6 +55,68 @@ public class Super_Boat extends Super_draw {
     public void setColor(Color color) {
         this.ColorBody = color;
     }
+    public boolean CheckLimit() {
+        System.out.println(getTranslateX() + "  " + getTranslateY() + "  ");
+        if (true) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public void goRight() {
+        if (CheckLimit()) {
+            setTranslateX(getTranslateX() + speed);
+        } else setTranslateX(getTranslateX() - 1);
+        System.out.println("Right OK");
+
+    }
+
+    public void goLeft() {
+
+        if (CheckLimit()) {
+            setTranslateX(getTranslateX() - speed);
+        } else {
+            setTranslateX(getTranslateX() + 1);
+            System.out.println("Left OK");
+
+        }
+    }
+
+    public void goUp() {
+        if (CheckLimit())
+            setTranslateY(getTranslateY() - speed);
+        else {
+            setTranslateY(getTranslateY() + 1);
+            System.out.println("Up  OK");
+        }
+    }
+
+    public void goDown() {
+        if (CheckLimit())
+            setTranslateY(getTranslateY() + speed);
+        else {
+            setTranslateY(getTranslateY() - 1);
+            System.out.println("Down OK");
+        }
+    }
+
+    public void speedUp() {
+        speed += 0.1;
+    }
+
+    public void speedDown() {
+        if (speed > 0) speed -= 0.1;
+        else speed = 0;
+        System.out.println(speed);
+    }
+
+
+    public boolean isClick(double x, double y) {
+        if (x > getTranslateX() && x < getTranslateX() + getWidth() && y > getTranslateY() && y < getTranslateY() + getWidth())
+            return true;
+        return false;
+    }
 
 
 

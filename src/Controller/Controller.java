@@ -28,6 +28,7 @@ public class Controller {
     protected Buoy buoy ;
     private boolean statusOn;
     ArrayList<Super_draw> ListObj;
+    private BoatKeyAction boatKeyAction ;
     @FXML
     Pane pane;
 
@@ -44,11 +45,84 @@ public class Controller {
         coconutTree = new CoconutTree(40, 300);
         ListObj.add(boatStyle1 = new Boat_style1(0, 80, "สำราญ"));
         ListObj.add(buoy = new Buoy(-160, -20));
-
-
-
-
         display();
+        boatKeyAction = new BoatKeyAction(boatStyle1);
+        pane.getParent().setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                switch ((event.getCode())) {
+                    case W:
+                        boatKeyAction.setMoveUp(true);
+                        break;
+                    case S:
+                        boatKeyAction.setMoveDown(true);
+                        break;
+                    case D:
+                        boatKeyAction.setMoveRight(true);
+                        break;
+                    case A:
+                        boatKeyAction.setMoveleft(true);
+                        break;
+                    case UP:
+                        boatKeyAction.setSpeedUp(true);
+                        break;
+                    case DOWN:
+                        boatKeyAction.setSpeedDown(true);
+                        break;
+
+                }
+            }
+        });
+        pane.getParent().setOnKeyReleased((event -> {
+            switch ((event.getCode())) {
+                case W:
+                    //boatStyle1.CheckLimit((int)bg.getTranslateX(),(int)bg.getTranslateY());
+                    boatKeyAction.setMoveUp(false);
+                    break;
+                case S:
+                    // boatStyle1.CheckLimit((int)bg.getTranslateX(),(int)bg.getTranslateY());
+                    boatKeyAction.setMoveDown(false);
+                    break;
+                case D:
+                    // boatStyle1.CheckLimit((int)bg.getTranslateX(),(int)bg.getTranslateY());
+                    boatKeyAction.setMoveRight(false);
+                    break;
+                case A:
+                    //boatStyle1.CheckLimit((int)bg.getTranslateX(),(int)bg.getTranslateY());
+                    boatKeyAction.setMoveleft(false);
+                    break;
+                case UP:
+                    //boatStyle1.CheckLimit((int)bg.getTranslateX(),(int)bg.getTranslateY());
+                    boatKeyAction.setSpeedUp(false);
+                    break;
+                case DOWN:
+                    //boatStyle1.CheckLimit((int)bg.getTranslateX(),(int)bg.getTranslateY());
+                    boatKeyAction.setSpeedDown(false);
+                    break;
+            }
+        }));
+
+        pane.getParent().setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                onClick(event.getX(), event.getY(), boatStyle1);
+                onClick(event.getX(), event.getY(), boatStyle2);
+            }
+
+            public void onClick(double x, double y, Super_Boat boat) {
+                if (boat.isClick(x, y)) {
+                    System.out.println("OK");
+                    boatKeyAction.setBoat(boat);
+                }
+            }
+        });
+        AnimationTimer animationTimer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                boatKeyAction.action();
+            }
+        };
+        animationTimer.start();
 
 
 
