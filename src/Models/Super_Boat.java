@@ -15,7 +15,6 @@ public class Super_Boat extends Super_draw {
 
     @Override
     public void draw() {
-        System.out.println(this.getBoundsInParent());
         drawBodyBoat();
         drawWindow();
     }

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1862.1356547619048" y="339.0">Models.Super_Boat</node>
+    <node x="330.0" y="904.5">Models.Cloud</node>
+    <node x="1022.4642857142856" y="915.5">Models.CrabStyle2</node>
+    <node x="927.4642857142856" y="460.5">Models.CrabStyle1</node>
+    <node x="2661.9642857142853" y="471.0">Models.ActionRotate</node>
+    <node x="1311.9696428571428" y="1303.0">Controller.Controller</node>
+    <node x="1207.4642857142856" y="915.5">Models.Background</node>
+    <node x="1928.4642857142856" y="882.0">Models.BoatStyle1</node>
+    <node x="2117.4642857142853" y="893.5">Models.BoatStyle2</node>
+    <node x="230.0" y="449.0">Models.ActionFade</node>
+    <node x="1303.9642857142858" y="0.0">Models.Animation</node>
+    <node x="1241.9642857142858" y="112.0">Models.Super_draw</node>
+    <node x="241.0" y="1995.0">Controller.ControllerInfo</node>
+    <node x="1443.4642857142856" y="893.0">Models.CoconutTree</node>
+    <node x="2424.9642857142853" y="460.0">Models.ActionTranslationX</node>
+    <node x="0.0" y="460.0">Models.ActionTranslationY</node>
+    <node x="631.9999999999998" y="893.5">Models.Buoy</node>
+    <node x="1657.4642857142856" y="772.0">Models.BoatKeyAction</node>
+    <node x="825.9999999999998" y="915.5">Models.TheSun</node>
+    <node x="467.0" y="1995.0">Main</node>
+    <node x="0.0" y="1995.0">Controller.ControllerHowto</node>
+    <node x="2327.4642857142853" y="915.5">Models.Wave</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Models.CoconutTree" target="Models.Super_draw">
+      <point x="0.0" y="-59.5" />
+      <point x="1539.9642857142856" y="309.0" />
+      <point x="1395.9642857142858" y="309.0" />
+      <point x="22.0" y="48.5" />
+    </edge>
+    <edge source="Models.Cloud" target="Models.Super_draw">
+      <point x="0.0" y="-48.0" />
+      <point x="470.9999999999999" y="279.0" />
+      <point x="1307.9642857142858" y="279.0" />
+      <point x="-66.0" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.ActionFade">
+      <point x="-130.80357142857156" y="-323.5" />
+      <point x="1327.6660714285713" y="1273.0" />
+      <point x="319.5" y="1273.0" />
+      <point x="0.0" y="81.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.CrabStyle2">
+      <point x="-36.625" y="-323.5" />
+      <point x="1421.8446428571428" y="1183.0" />
+      <point x="1104.9642857142856" y="1183.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.CrabStyle1">
+      <point x="-47.08928571428578" y="-323.5" />
+      <point x="1411.380357142857" y="1193.0" />
+      <point x="1011.9642857142856" y="1193.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Wave">
+      <point x="109.875" y="-323.5" />
+      <point x="1568.3446428571428" y="1253.0" />
+      <point x="2370.9642857142853" y="1253.0" />
+      <point x="-43.5" y="37.0" />
+    </edge>
+    <edge source="Models.ActionTranslationY" target="Models.Super_draw">
+      <point x="0.0" y="-70.5" />
+      <point x="105.0" y="239.0" />
+      <point x="1249.2976190476188" y="239.0" />
+      <point x="-124.66666666666674" y="48.5" />
+    </edge>
+    <edge source="Models.ActionRotate" target="Models.Super_draw">
+      <point x="-72.33333333333348" y="-59.5" />
+      <point x="2698.1309523809523" y="249.0" />
+      <point x="1483.9642857142858" y="249.0" />
+      <point x="110.0" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.ActionTranslationY">
+      <point x="-141.26785714285734" y="-323.5" />
+      <point x="1317.2017857142855" y="1283.0" />
+      <point x="105.0" y="1283.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="Models.BoatStyle1" target="Models.Super_Boat">
+      <point x="0.0" y="-70.5" />
+      <point x="2012.4642857142856" y="752.0" />
+      <point x="1994.1356547619048" y="752.0" />
+      <point x="0.0" y="191.5" />
+    </edge>
+    <edge source="Models.ActionFade" target="Models.Animation">
+      <point x="-59.666666666666515" y="-81.5" />
+      <point x="259.8333333333335" y="229.0" />
+      <point x="282.22464285714295" y="229.0" />
+      <point x="282.22464285714295" y="82.0" />
+      <point x="1338.9642857142858" y="82.0" />
+      <point x="-35.0" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.ActionTranslationX">
+      <point x="130.80357142857133" y="-323.5" />
+      <point x="1589.273214285714" y="1273.0" />
+      <point x="2533.4642857142853" y="1273.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="Models.Buoy" target="Models.Super_draw">
+      <point x="0.0" y="-59.0" />
+      <point x="718.9999999999998" y="289.0" />
+      <point x="1322.6309523809523" y="289.0" />
+      <point x="-51.33333333333326" y="48.5" />
+    </edge>
+    <edge source="Models.CrabStyle1" target="Models.Super_draw">
+      <point x="1.1368683772161603E-13" y="-70.0" />
+      <point x="1011.9642857142857" y="309.0" />
+      <point x="1351.9642857142858" y="309.0" />
+      <point x="-22.0" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Buoy">
+      <point x="-99.41071428571422" y="-323.5" />
+      <point x="1359.0589285714286" y="1243.0" />
+      <point x="675.4999999999998" y="1243.0" />
+      <point x="-43.5" y="59.0" />
+    </edge>
+    <edge source="Models.ActionTranslationX" target="Models.Animation">
+      <point x="72.33333333333348" y="-70.5" />
+      <point x="2605.7976190476193" y="319.0" />
+      <point x="2584.453333333333" y="319.0" />
+      <point x="2584.453333333333" y="82.0" />
+      <point x="1408.9642857142858" y="82.0" />
+      <point x="35.0" y="26.0" />
+    </edge>
+    <edge source="Models.ActionFade" target="Models.Super_draw">
+      <point x="59.666666666666686" y="-81.5" />
+      <point x="379.16666666666674" y="269.0" />
+      <point x="1293.2976190476188" y="269.0" />
+      <point x="-80.66666666666674" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.TheSun">
+      <point x="-68.01785714285711" y="-323.5" />
+      <point x="1390.4517857142855" y="1213.0" />
+      <point x="949.7499999999998" y="1213.0" />
+      <point x="41.25" y="37.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Cloud">
+      <point x="-109.875" y="-323.5" />
+      <point x="1348.5946428571428" y="1253.0" />
+      <point x="541.5" y="1253.0" />
+      <point x="70.5" y="48.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.ActionRotate">
+      <point x="141.2678571428571" y="-323.5" />
+      <point x="1599.7374999999997" y="1283.0" />
+      <point x="2770.4642857142853" y="1283.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="Models.Super_Boat" target="Models.Super_draw">
+      <point x="0.0" y="-191.5" />
+      <point x="1994.1356547619048" y="289.0" />
+      <point x="1425.2976190476188" y="289.0" />
+      <point x="51.33333333333326" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.CoconutTree">
+      <point x="5.23214285714289" y="-323.5" />
+      <point x="1463.7017857142855" y="1153.0" />
+      <point x="1491.7142857142856" y="1153.0" />
+      <point x="-48.25" y="59.5" />
+    </edge>
+    <edge source="Models.ActionRotate" target="Models.Animation">
+      <point x="72.33333333333348" y="-59.5" />
+      <point x="2842.7976190476193" y="229.0" />
+      <point x="2708.453333333333" y="229.0" />
+      <point x="2708.453333333333" y="72.0" />
+      <point x="1432.2976190476188" y="72.0" />
+      <point x="58.33333333333326" y="26.0" />
+    </edge>
+    <edge source="Models.TheSun" target="Models.Super_draw">
+      <point x="0.0" y="-37.0" />
+      <point x="908.4999999999998" y="299.0" />
+      <point x="1337.2976190476188" y="299.0" />
+      <point x="-36.66666666666674" y="48.5" />
+    </edge>
+    <edge source="Models.ActionTranslationX" target="Models.Super_draw">
+      <point x="0.0" y="-70.5" />
+      <point x="2533.4642857142853" y="259.0" />
+      <point x="1469.2976190476188" y="259.0" />
+      <point x="95.33333333333326" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.BoatStyle1">
+      <point x="57.55357142857156" y="-323.5" />
+      <point x="1516.0232142857144" y="1203.0" />
+      <point x="1970.4642857142856" y="1203.0" />
+      <point x="-42.0" y="70.5" />
+    </edge>
+    <edge source="Models.Wave" target="Models.Super_draw">
+      <point x="0.0" y="-37.0" />
+      <point x="2414.4642857142853" y="279.0" />
+      <point x="1439.9642857142858" y="279.0" />
+      <point x="66.0" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.BoatStyle2">
+      <point x="88.94642857142867" y="-323.5" />
+      <point x="1547.4160714285713" y="1233.0" />
+      <point x="2164.9642857142853" y="1233.0" />
+      <point x="-47.5" y="59.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Super_Boat">
+      <point x="78.48214285714289" y="-323.5" />
+      <point x="1536.9517857142855" y="1223.0" />
+      <point x="2106.9642857142853" y="1223.0" />
+      <point x="2106.9642857142853" y="752.0" />
+      <point x="2046.9356547619045" y="752.0" />
+      <point x="52.799999999999955" y="191.5" />
+    </edge>
+    <edge source="Models.BoatStyle2" target="Models.Super_Boat">
+      <point x="0.0" y="-59.0" />
+      <point x="2212.4642857142853" y="742.0" />
+      <point x="2099.7356547619047" y="742.0" />
+      <point x="105.59999999999991" y="191.5" />
+    </edge>
+    <edge source="Models.Super_draw" target="Models.Animation">
+      <point x="66.0" y="-48.5" />
+      <point x="1439.9642857142858" y="92.0" />
+      <point x="1385.6309523809523" y="92.0" />
+      <point x="11.666666666666742" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Background">
+      <point x="-26.16071428571422" y="-323.5" />
+      <point x="1432.3089285714286" y="1173.0" />
+      <point x="1261.2142857142856" y="1173.0" />
+      <point x="-53.75" y="37.0" />
+    </edge>
+    <edge source="Models.CrabStyle2" target="Models.CrabStyle1">
+      <point x="0.0" y="-37.0" />
+      <point x="1104.9642857142856" y="752.0" />
+      <point x="1068.2976190476188" y="752.0" />
+      <point x="56.33333333333337" y="70.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.BoatKeyAction">
+      <point x="36.625" y="-323.5" />
+      <point x="1495.0946428571428" y="1183.0" />
+      <point x="1720.2142857142856" y="1183.0" />
+      <point x="-62.75" y="180.5" />
+    </edge>
+    <edge source="Models.Background" target="Models.Super_draw">
+      <point x="0.0" y="-37.0" />
+      <point x="1314.9642857142856" y="319.0" />
+      <point x="1366.6309523809523" y="319.0" />
+      <point x="-7.333333333333485" y="48.5" />
+    </edge>
+    <edge source="Models.ActionTranslationY" target="Models.Animation">
+      <point x="-70.0" y="-70.5" />
+      <point x="35.0" y="229.0" />
+      <point x="164.30797619047644" y="229.0" />
+      <point x="164.30797619047644" y="72.0" />
+      <point x="1315.6309523809523" y="72.0" />
+      <point x="-58.33333333333326" y="26.0" />
+    </edge>
+    <edge source="Models.BoatKeyAction" target="Models.Super_Boat">
+      <point x="62.75" y="-180.5" />
+      <point x="1845.7142857142856" y="752.0" />
+      <point x="1941.3356547619046" y="752.0" />
+      <point x="-52.799999999999955" y="191.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Super_draw">
+      <point x="26.16071428571422" y="-323.5" />
+      <point x="1484.630357142857" y="1173.0" />
+      <point x="1646.9642857142856" y="1173.0" />
+      <point x="1646.9642857142856" y="299.0" />
+      <point x="1410.6309523809523" y="299.0" />
+      <point x="36.666666666666515" y="48.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.474054238296433" x="1413.1945545253689" y="670.9028921617635" />
+  <SelectedNodes>
+    <node>Controller.Controller</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

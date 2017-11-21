@@ -14,7 +14,7 @@ public class CoconutTree extends Super_draw {
     public void draw() {
         drawBody();
         drawCoconut();
-        drawleft();
+
     }
 
     public void drawBody() {
@@ -25,8 +25,8 @@ public class CoconutTree extends Super_draw {
         gc.setFill(Color.rgb(206, 168, 23));
         for (int i = 0; i < 13; i++) {
             gc.setLineWidth(2);
-            gc.strokeRect(15, y, 50, 20);
-            gc.fillRect(15, y, 50, 20);
+            gc.strokeRect(25, y, 30, 20);
+            gc.fillRect(25, y, 30, 20);
             y = y - 10;
         }
     }
@@ -65,29 +65,5 @@ public class CoconutTree extends Super_draw {
     }
 
 
-    public void drawleft() {
-//        int w = 100;
-//        int h = 25;
-//        for (int i = 0; i < 4; i++) {
-//            gc.strokeOval(70, 0, w, h);
-//            gc.fillOval(70, 0, w, h);
-//            gc.setFill(Color.rgb(1, 220, 36));
-//            w -= 10;
-//            h += 50;
-//        }
-//        int w2 = 100;
-//        int h2 = 25;
-//        int x = 0;
-//        for (int i = 0; i < 2; i++) {
-//            gc.strokeOval(x, 0, w, h);
-//            gc.fillOval(x, 0, w, h);
-//            gc.setFill(Color.rgb(1, 220, 36));
-//            w -= 10;
-//            h += 10;
-//            x += 5;
-//        }
 
-        //gc.strokeRoundRect(100,25, 100,20,90,90);
-
-    }
 }

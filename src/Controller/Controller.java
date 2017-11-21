@@ -20,13 +20,13 @@ public class Controller {
     protected BoatStyle1 boatStyle1;
     protected BoatStyle2 boatStyle2;
     protected Background bg;
-    protected CoconutTree coconutTree;
+    protected CoconutTree coconutTree ,coconutTree2,coconutTree3;
     protected Cloud cloud , cloud2 ,cloud3 ,cloud4;
     protected TheSun theSun;
     protected Wave wave, wave2, wave3;
     protected Buoy buoy ;
     protected CrabStyle1 crabStyle1, crabStyle12;
-    private boolean statusOn;
+    private boolean statusOn = false;
     private ArrayList<Super_draw> ListObj;
     private BoatKeyAction boatKeyAction ;
     @FXML
@@ -45,7 +45,9 @@ public class Controller {
         ListObj.add(cloud3 = new Cloud(400, 0));
         ListObj.add(cloud4 = new Cloud(600, 0));
         ListObj.add(bg = new Background(0, 0));
-        coconutTree = new CoconutTree(40, 300);
+        ListObj.add(coconutTree2 = new CoconutTree(670, 340));
+        ListObj.add(coconutTree = new CoconutTree(720, 290));
+        ListObj.add(coconutTree3 = new CoconutTree(620, 290));
         ListObj.add(boatStyle1 = new BoatStyle1(0, 80, "สำราญ"));
         ListObj.add(buoy = new Buoy(-160, -20));
         ListObj.add(crabStyle1 = new CrabStyle1(0,0));
@@ -139,33 +141,43 @@ public class Controller {
             obj.draw();
         }
 
-        pane.getChildren().addAll(bg, theSun, crabStyle1, crabStyle12, wave, wave2, wave3, buoy ,boatStyle2, boatStyle1, cloud,cloud2,cloud3,cloud4);
+        pane.getChildren().addAll(bg, theSun, crabStyle1, crabStyle12, wave, wave2, wave3, buoy ,boatStyle2, boatStyle1,coconutTree3,coconutTree,coconutTree2, cloud,cloud2,cloud3,cloud4);
     }
 
     @FXML
     public void Start(ActionEvent event) {
-        statusOn = true;
-        theSun.StartAnimation(new ActionFade(9000, 1.0, 0, theSun));
-        bg.StartAnimation(new ActionFade(9000, 1.0, 0.3, bg));
-        boatStyle1.StartAnimation(new ActionTranslationX(550, 9000, boatStyle1));
-        boatStyle2.StartAnimation(new ActionTranslationX(-550, 9000, boatStyle2));
-        boatStyle1.StartAnimation(new ActionRotate(2, boatStyle1));
-        boatStyle2.StartAnimation(new ActionRotate(2, boatStyle2));
-        buoy.StartAnimation(new ActionRotate(4, buoy));
-        wave.StartAnimation(new ActionTranslationY(200, 9000, wave));
-        wave2.StartAnimation(new ActionTranslationY(200, 9000, wave2));
-        wave3.StartAnimation(new ActionTranslationY(200, 9000, wave3));
-        wave.StartAnimation(new ActionFade(3000, 1.0, 0, wave));
-        wave2.StartAnimation(new ActionFade(2500, 1.0, 0, wave2));
-        wave3.StartAnimation(new ActionFade(3000, 1.0, 0, wave3));
-        cloud.StartAnimation(new ActionTranslationX(50,9000,cloud));
-        cloud2.StartAnimation(new ActionTranslationX(50,9000,cloud2));
-        cloud3.StartAnimation(new ActionTranslationX(50,9000,cloud3));
-        cloud4.StartAnimation(new ActionTranslationX(50,9000,cloud4));
-        cloud.StartAnimation(new ActionFade(9000,1.0,0.1,cloud));
-        cloud2.StartAnimation(new ActionFade(9000,1.0,0.1,cloud2));
-        cloud3.StartAnimation(new ActionFade(9000,1.0,0.1,cloud3));
-        cloud4.StartAnimation(new ActionFade(9000,1.0,0.1,cloud4));
+        if (!statusOn) {
+            statusOn = true;
+            theSun.StartAnimation(new ActionFade(9000, 1.0, 0, theSun));
+            bg.StartAnimation(new ActionFade(9000, 1.0, 0.3, bg));
+            boatStyle1.StartAnimation(new ActionTranslationX(550, 9000, boatStyle1));
+            boatStyle2.StartAnimation(new ActionTranslationX(-550, 9000, boatStyle2));
+            boatStyle1.StartAnimation(new ActionRotate(2, boatStyle1));
+            boatStyle2.StartAnimation(new ActionRotate(2, boatStyle2));
+            buoy.StartAnimation(new ActionRotate(4, buoy));
+            wave.StartAnimation(new ActionTranslationY(200, 9000, wave));
+            wave2.StartAnimation(new ActionTranslationY(200, 9000, wave2));
+            wave3.StartAnimation(new ActionTranslationY(200, 9000, wave3));
+            wave.StartAnimation(new ActionFade(3000, 1.0, 0, wave));
+            wave2.StartAnimation(new ActionFade(2500, 1.0, 0, wave2));
+            wave3.StartAnimation(new ActionFade(3000, 1.0, 0, wave3));
+            cloud.StartAnimation(new ActionTranslationX(50, 9000, cloud));
+            cloud2.StartAnimation(new ActionTranslationX(50, 9000, cloud2));
+            cloud3.StartAnimation(new ActionTranslationX(50, 9000, cloud3));
+            cloud4.StartAnimation(new ActionTranslationX(50, 9000, cloud4));
+            cloud.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud));
+            cloud2.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud2));
+            cloud3.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud3));
+            cloud4.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud4));
+            crabStyle1.StartAnimation(new ActionFade(9000, 1.0, 0.8, crabStyle1));
+            crabStyle12.StartAnimation(new ActionFade(9000, 1.0, 0.8, crabStyle12));
+            coconutTree.StartAnimation(new ActionFade(9000, 1.0, 0.8, coconutTree));
+            coconutTree2.StartAnimation(new ActionFade(9000, 1.0, 0.8, coconutTree2));
+            coconutTree3.StartAnimation(new ActionFade(9000, 1.0, 0.8, coconutTree3));
+
+
+
+        }
     }
     @FXML
     public void Stop(ActionEvent event) {
@@ -190,14 +202,11 @@ public class Controller {
         FXMLLoader root = new FXMLLoader(getClass().getResource("/Views/infoView.fxml"));
         NewStage(root, "Information");
 
-
     }
-
     @FXML
     public void HowtoBtn(ActionEvent event) throws IOException {
         FXMLLoader root = new FXMLLoader(getClass().getResource("/Views/howtoView.fxml"));
         NewStage(root, "How to");
-
     }
     public void NewStage(FXMLLoader root, String title) throws IOException {
         Stage b = new Stage();
