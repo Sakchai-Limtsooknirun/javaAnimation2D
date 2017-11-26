@@ -12,7 +12,7 @@ public class Fishs extends Animals implements Animation{
     private Color TailColor ;
 
     public Fishs(int x, int y,Color BodyFish) {
-        super(x, y, 300, 300);
+        super(x, y);
         this.BodyFish = BodyFish ;
         FinColor = Color.web("#00bfff");
         TailColor = Color.web("#00bfff");

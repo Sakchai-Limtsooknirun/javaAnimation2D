@@ -1,13 +1,17 @@
 package Models;
 
-public class Animals extends DrawsGraphic {
+import javafx.scene.paint.Color;
 
-    public Animals(int x, int y, int w, int h) {
-        super(x, y, w, h);
+public class Animals extends DrawsGraphic{
+    public Color ColorBody ;
+
+    public Animals(int x, int y) {
+        super(x, y, 900, 600);
     }
 
     @Override
     public void draw() {
 
     }
+
 }

@@ -21,48 +21,48 @@ public class Controller {
     protected SailBoat sailBoat;
     protected FishingBoat fishingBoat;
     protected Background bg;
-    protected TheSky theSky ;
-    protected TheGround theGround ;
-    protected CoconutTree coconutTree ,coconutTree2,coconutTree3;
-    protected Cloud cloud , cloud2 ,cloud3 ,cloud4;
+    protected TheSky theSky;
+    protected TheGround theGround;
+    protected CoconutTree coconutTree, coconutTree2, coconutTree3;
+    protected Cloud cloud, cloud2, cloud3, cloud4;
     protected TheSun theSun;
     protected Wave wave, wave2, wave3;
-    protected Buoy buoy ;
-    protected BigCrabs bigCrabs ,bigCrabs2;
-    protected Fishs fishs , fishsTuna , fishsSammon ;
-    protected TheSea theSea ;
+    protected Buoy buoy;
+    protected BigCrabs bigCrabs, bigCrabs2;
+    protected Fishs fishs, fishsTuna, fishsSammon;
+    protected TheSea theSea;
     private boolean statusOn = false;
     private ArrayList<DrawsGraphic> ListObj;
-    private BoatKeyAction boatKeyAction ;
+    private BoatKeyAction boatKeyAction;
     @FXML
     Pane pane;
 
 
     public void initialize() {
-        ListObj = new ArrayList<>();
+        ListObj = new ArrayList<DrawsGraphic>();
         ListObj.add(bg = new Background(0, 0));
-        ListObj.add(theSky = new TheSky(0,0));
-        ListObj.add(theGround = new TheGround(0,0));
+        ListObj.add(theSky = new TheSky(0, 0));
+        ListObj.add(theGround = new TheGround(0, 0));
         ListObj.add(theSun = new TheSun(200, 30));
-        ListObj.add(theSea = new TheSea(0,0));
-        ListObj.add(bigCrabs = new BigCrabs(0,0));
-        ListObj.add(bigCrabs2 = new BigCrabs(200,90));
-        ListObj.add(fishs = new Fishs(800,100,Color.ORANGE));
-        ListObj.add(fishsTuna = new Fishs(800 , 150,Color.web("#808080")));
-        ListObj.add(fishsSammon = new Fishs(920,125,Color.web("#ff00bf")));
+        ListObj.add(theSea = new TheSea(0, 0));
+        ListObj.add(bigCrabs = new BigCrabs(0, 0));
+        ListObj.add(bigCrabs2 = new BigCrabs(200, 90));
+        ListObj.add(fishs = new Fishs(800, 100, Color.ORANGE));
+        ListObj.add(fishsTuna = new Fishs(800, 150, Color.web("#808080")));
+        ListObj.add(fishsSammon = new Fishs(920, 125, Color.web("#ff00bf")));
         ListObj.add(wave = new Wave(0, 160));
         ListObj.add(wave2 = new Wave(0, 140));
         ListObj.add(wave3 = new Wave(0, 180));
         ListObj.add(buoy = new Buoy(-160, -20));
-        ListObj.add(fishingBoat = new FishingBoat(550, 0,Color.web("#0080ff"),"จับปลา24ช.ม"));
-        ListObj.add(sailBoat = new SailBoat(0, 80, "SailBoat",Color.web("#ff0040") , Color.web("#ffff00")));
-        ListObj.add(coconutTree3 = new CoconutTree(620, 290,13));
-        ListObj.add(coconutTree = new CoconutTree(720, 290,15));
-        ListObj.add(coconutTree2 = new CoconutTree(670, 340,10));
-        ListObj.add(cloud = new Cloud(10, 0,Color.web("#00bfff"),50,50));
-        ListObj.add(cloud2 = new Cloud(190, 0,Color.web("#0080ff"),20,50));
-        ListObj.add(cloud3 = new Cloud(400, 0,Color.web("#00bfff"),30,50));
-        ListObj.add(cloud4 = new Cloud(600, 0,Color.web("#0080ff"),20,50));
+        ListObj.add(fishingBoat = new FishingBoat(550, 0, Color.web("#0080ff"), "จับปลา24ช.ม"));
+        ListObj.add(sailBoat = new SailBoat(0, 80, "ไทยประกันชีวิต", Color.BLACK, Color.web("#ffff00")));
+        ListObj.add(coconutTree3 = new CoconutTree(620, 290, 13));
+        ListObj.add(coconutTree = new CoconutTree(720, 290, 15));
+        ListObj.add(coconutTree2 = new CoconutTree(670, 340, 10));
+        ListObj.add(cloud = new Cloud(10, 0, Color.web("#00bfff"), 50, 50));
+        ListObj.add(cloud2 = new Cloud(190, 0, Color.web("#0080ff"), 20, 50));
+        ListObj.add(cloud3 = new Cloud(400, 0, Color.web("#00bfff"), 30, 50));
+        ListObj.add(cloud4 = new Cloud(600, 0, Color.web("#0080ff"), 20, 50));
 
         display();
 
@@ -147,7 +147,7 @@ public class Controller {
 
     public void display() {
         pane.getChildren().clear();
-        for (DrawsGraphic obj : ListObj){
+        for (DrawsGraphic obj : ListObj) {
             obj.draw();
         }
         pane.getChildren().addAll(ListObj);
@@ -164,6 +164,7 @@ public class Controller {
             }
         }
     }
+
     @FXML
     public void Stop(ActionEvent event) {
         if (statusOn) {
@@ -188,11 +189,13 @@ public class Controller {
         NewStage(root, "Information");
 
     }
+
     @FXML
     public void HowtoBtn(ActionEvent event) throws IOException {
         FXMLLoader root = new FXMLLoader(getClass().getResource("/Views/howtoView.fxml"));
         NewStage(root, "How to");
     }
+
     public void NewStage(FXMLLoader root, String title) throws IOException {
         Stage b = new Stage();
         b.setTitle(title);

@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class FishingBoat extends Boat implements Animation{
-    private double  moveMentSpeed;
+    private double BaseSpeeds;
     private Color ColorLadder;
     private Color ColorMast;
     private Color ColorWindow;
@@ -22,7 +22,7 @@ public class FishingBoat extends Boat implements Animation{
         this.ColorBillBoardFish = ColorFish;
         this.BillBoardText = BillBoardText;
 
-        moveMentSpeed = 1.0 ;
+        BaseSpeeds = 1.0 ;
         ColorLadder = Color.BLACK;
         ColorMast = Color.BLACK;
         ColorWindow = Color.web("#ffffff");
@@ -98,13 +98,12 @@ public class FishingBoat extends Boat implements Animation{
 
     @Override
     public void speedUp() {
-        setSpeed(moveMentSpeed);
-        ;
+        setSpeed(BaseSpeeds);
     }
 
     @Override
     public void speedDown() {
-        setSpeed(moveMentSpeed);
+        setSpeed(BaseSpeeds);
     }
 
     @Override

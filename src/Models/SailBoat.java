@@ -11,7 +11,7 @@ public class SailBoat extends Boat implements Animation{
     private String Logo;
     private Color ColorSail ;
     private Color ColorWindow = Color.web("#ffffff");
-    private Color ColorFont = Color.BLACK ;
+    private Color ColorFont  ;
 
     public SailBoat(int x, int y, String Logo,Color ColorText ,Color ColorSail) {
         super(x, y,Color.web("#ff00bf"));
@@ -32,7 +32,7 @@ public class SailBoat extends Boat implements Animation{
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(1);
         gc.setStroke(ColorFont);
-        gc.strokeText(Logo, 145, 180);
+        gc.strokeText(Logo, 140, 210);
     }
 
     public void drawSail() {
@@ -57,13 +57,10 @@ public class SailBoat extends Boat implements Animation{
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(ColorWindow);
         gc.setLineWidth(2);
-
-        gc.fillOval(110, 230, 15, 15);
-        gc.strokeOval(110, 230, 15, 15);
-
-        gc.fillOval(135, 230, 15, 15);
-        gc.strokeOval(135, 230, 15, 15);
-
+        gc.fillOval(110, 230, 17, 17);
+        gc.fillOval(135, 230, 17, 17);
+        gc.setStroke(Color.WHITE);
+        gc.strokeLine(108,238,155,238);
 
     }
 
@@ -86,4 +83,5 @@ public class SailBoat extends Boat implements Animation{
         rt.setAutoReverse(true);
         rt.play();
     }
+
 }
