@@ -1,5 +1,6 @@
 package Models;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.scene.canvas.GraphicsContext;
@@ -7,7 +8,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.util.Duration;
 
-public class Wave extends Super_draw {
+public class Wave extends DrawsGraphic implements Animation{
+
+
     public Wave(int x, int y) {
         super(x, y,900,600);
     }
@@ -34,7 +37,24 @@ public class Wave extends Super_draw {
     }
 
 
+    @Override
+    public void StartAnimation() {
+        TranslateTransition tty = new TranslateTransition(
+                Duration.millis(9000), this);
+        tty.setFromY(this.getTranslateY());
+        tty.setToY(this.getTranslateY() + 200);
+        tty.setCycleCount(Timeline.INDEFINITE);
+        tty.setAutoReverse(true);
+        tty.play();
 
+        FadeTransition ft = new FadeTransition(
+                Duration.millis(3000), this
+        );
+        ft.setFromValue(1.0);
+        ft.setToValue(0);
+        ft.setCycleCount(Timeline.INDEFINITE);
+        ft.setAutoReverse(true);
+        ft.play();
 
-
+    }
 }

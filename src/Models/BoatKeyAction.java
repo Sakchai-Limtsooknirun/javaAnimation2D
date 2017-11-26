@@ -3,14 +3,14 @@ package Models;
 
 public class BoatKeyAction {
 
-    private Super_Boat boat;
+    private Boat boat;
     private boolean isMoveUp, isMoveDown, isMoveRight, isMoveleft, isSpeedUp, isSpeedDown;
 
-    public BoatKeyAction(Super_Boat boat) {
+    public BoatKeyAction(Boat boat) {
         this.boat = boat;
     }
 
-    public void setBoat(Super_Boat boat) {
+    public void setBoat(Boat boat) {
         this.boat = boat;
     }
 

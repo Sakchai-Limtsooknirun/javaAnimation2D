@@ -11,23 +11,26 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Controller {
-    protected BoatStyle1 boatStyle1;
-    protected BoatStyle2 boatStyle2;
+    protected SailBoat sailBoat;
+    protected FishingBoat fishingBoat;
     protected Background bg;
     protected CoconutTree coconutTree ,coconutTree2,coconutTree3;
     protected Cloud cloud , cloud2 ,cloud3 ,cloud4;
     protected TheSun theSun;
     protected Wave wave, wave2, wave3;
     protected Buoy buoy ;
-    protected CrabStyle1 crabStyle1, crabStyle12;
+    protected BigCrabs bigCrabs;
+    protected Fishs fishs , fishsTuna , fishsSammon ;
+    protected TheSea theSea ;
     private boolean statusOn = false;
-    private ArrayList<Super_draw> ListObj;
+    private ArrayList<DrawsGraphic> ListObj;
     private BoatKeyAction boatKeyAction ;
     @FXML
     Pane pane;
@@ -35,26 +38,30 @@ public class Controller {
 
     public void initialize() {
         ListObj = new ArrayList<>();
+        ListObj.add(theSea = new TheSea(0,0,Color.web("#B6D7FA")));
         ListObj.add(wave2 = new Wave(0, 140));
         ListObj.add(wave3 = new Wave(0, 180));
         ListObj.add(wave = new Wave(0, 160));
-        ListObj.add(boatStyle2 = new BoatStyle2(550, 0));
+        ListObj.add(fishingBoat = new FishingBoat(550, 0,Color.web("#0080ff"),"จับปลา24ช.ม"));
         ListObj.add(theSun = new TheSun(200, 30));
-        ListObj.add(cloud = new Cloud(10, 0));
-        ListObj.add(cloud2 = new Cloud(190, 0));
-        ListObj.add(cloud3 = new Cloud(400, 0));
-        ListObj.add(cloud4 = new Cloud(600, 0));
+        ListObj.add(cloud = new Cloud(10, 0,Color.web("#00bfff"),50,50));
+        ListObj.add(cloud2 = new Cloud(190, 0,Color.web("#0080ff"),20,50));
+        ListObj.add(cloud3 = new Cloud(400, 0,Color.web("#00bfff"),30,50));
+        ListObj.add(cloud4 = new Cloud(600, 0,Color.web("#0080ff"),20,50));
         ListObj.add(bg = new Background(0, 0));
-        ListObj.add(coconutTree2 = new CoconutTree(670, 340));
-        ListObj.add(coconutTree = new CoconutTree(720, 290));
-        ListObj.add(coconutTree3 = new CoconutTree(620, 290));
-        ListObj.add(boatStyle1 = new BoatStyle1(0, 80, "สำราญ"));
+        ListObj.add(coconutTree2 = new CoconutTree(670, 340,10));
+        ListObj.add(coconutTree = new CoconutTree(720, 290,15));
+        ListObj.add(coconutTree3 = new CoconutTree(620, 290,13));
+        ListObj.add(sailBoat = new SailBoat(0, 80, "SailBoat",Color.web("#ff0040") , Color.web("#ffff00")));
         ListObj.add(buoy = new Buoy(-160, -20));
-        ListObj.add(crabStyle1 = new CrabStyle1(0,0));
-        ListObj.add(crabStyle12 =new CrabStyle2(300,50));
+        ListObj.add(bigCrabs = new BigCrabs(0,0));
+        ListObj.add(fishsTuna = new Fishs(800 , 150,Color.web("#808080")));
+        ListObj.add(fishs = new Fishs(800,100,Color.ORANGE));
+        ListObj.add(fishsSammon = new Fishs(920,125,Color.web("#ff00bf")));
+
         display();
 
-        boatKeyAction = new BoatKeyAction(boatStyle1);
+        boatKeyAction = new BoatKeyAction(sailBoat);
         pane.getParent().setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -112,13 +119,12 @@ public class Controller {
         pane.getParent().setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                onClick(event.getX(), event.getY(), boatStyle1);
-                onClick(event.getX(), event.getY(), boatStyle2);
+                onClick(event.getX(), event.getY(), sailBoat);
+                onClick(event.getX(), event.getY(), fishingBoat);
             }
 
-            public void onClick(double x, double y, Super_Boat boat) {
+            public void onClick(double x, double y, Boat boat) {
                 if (boat.isClick(x, y)) {
-                    System.out.println("OK");
                     boatKeyAction.setBoat(boat);
                 }
             }
@@ -137,46 +143,23 @@ public class Controller {
     public void display() {
         pane.getChildren().clear();
 
-        for (Super_draw obj : ListObj){
+        for (DrawsGraphic obj : ListObj){
             obj.draw();
         }
 
-        pane.getChildren().addAll(bg, theSun, crabStyle1, crabStyle12, wave, wave2, wave3, buoy ,boatStyle2, boatStyle1,coconutTree3,coconutTree,coconutTree2, cloud,cloud2,cloud3,cloud4);
+        pane.getChildren().addAll(bg, theSun,theSea, bigCrabs, fishs ,fishsTuna , fishsSammon, wave, wave2, wave3, buoy ,
+                fishingBoat,sailBoat,coconutTree3,coconutTree,coconutTree2, cloud,cloud2,cloud3,cloud4);
     }
+
 
     @FXML
     public void Start(ActionEvent event) {
         if (!statusOn) {
             statusOn = true;
-            theSun.StartAnimation(new ActionFade(9000, 1.0, 0, theSun));
-            bg.StartAnimation(new ActionFade(9000, 1.0, 0.3, bg));
-            boatStyle1.StartAnimation(new ActionTranslationX(550, 9000, boatStyle1));
-            boatStyle2.StartAnimation(new ActionTranslationX(-550, 9000, boatStyle2));
-            boatStyle1.StartAnimation(new ActionRotate(2, boatStyle1));
-            boatStyle2.StartAnimation(new ActionRotate(2, boatStyle2));
-            buoy.StartAnimation(new ActionRotate(4, buoy));
-            wave.StartAnimation(new ActionTranslationY(200, 9000, wave));
-            wave2.StartAnimation(new ActionTranslationY(200, 9000, wave2));
-            wave3.StartAnimation(new ActionTranslationY(200, 9000, wave3));
-            wave.StartAnimation(new ActionFade(3000, 1.0, 0, wave));
-            wave2.StartAnimation(new ActionFade(2500, 1.0, 0, wave2));
-            wave3.StartAnimation(new ActionFade(3000, 1.0, 0, wave3));
-            cloud.StartAnimation(new ActionTranslationX(50, 9000, cloud));
-            cloud2.StartAnimation(new ActionTranslationX(50, 9000, cloud2));
-            cloud3.StartAnimation(new ActionTranslationX(50, 9000, cloud3));
-            cloud4.StartAnimation(new ActionTranslationX(50, 9000, cloud4));
-            cloud.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud));
-            cloud2.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud2));
-            cloud3.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud3));
-            cloud4.StartAnimation(new ActionFade(9000, 1.0, 0.1, cloud4));
-            crabStyle1.StartAnimation(new ActionFade(9000, 1.0, 0.8, crabStyle1));
-            crabStyle12.StartAnimation(new ActionFade(9000, 1.0, 0.8, crabStyle12));
-            coconutTree.StartAnimation(new ActionFade(9000, 1.0, 0.8, coconutTree));
-            coconutTree2.StartAnimation(new ActionFade(9000, 1.0, 0.8, coconutTree2));
-            coconutTree3.StartAnimation(new ActionFade(9000, 1.0, 0.8, coconutTree3));
-
-
-
+            for (DrawsGraphic obj : ListObj) {
+                if (obj instanceof Animation)
+                    ((Animation) obj).StartAnimation();
+            }
         }
     }
     @FXML

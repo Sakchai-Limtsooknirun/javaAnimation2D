@@ -1,15 +1,17 @@
 package Models;
 
+import javafx.animation.RotateTransition;
+import javafx.animation.Timeline;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
+import javafx.util.Duration;
 
-public class Buoy extends Super_draw {
+public class Buoy extends DrawsGraphic implements Animation{
+
     public Buoy(int x, int y) {
         super(x, y, 300, 300);
-
     }
-
     @Override
     public void draw() {
         drawWave();
@@ -47,7 +49,6 @@ public class Buoy extends Super_draw {
     public void drawWave() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(3);
-        //gc.setFill(Color.BLUE);
         gc.setStroke(Color.web("#00bfff"));
         gc.strokeArc(210, 235, 55, 35, 180, 180, ArcType.OPEN);
         gc.strokeArc(213, 232, 50, 30, 180, 180, ArcType.OPEN);
@@ -55,4 +56,13 @@ public class Buoy extends Super_draw {
     }
 
 
+    @Override
+    public void StartAnimation() {
+        RotateTransition rt = new RotateTransition(
+                Duration.millis(3000), this);
+        rt.setByAngle(4);
+        rt.setCycleCount(Timeline.INDEFINITE);
+        rt.setAutoReverse(true);
+        rt.play();
+    }
 }
