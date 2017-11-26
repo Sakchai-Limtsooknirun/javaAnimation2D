@@ -3,13 +3,13 @@ package Models;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class TheSea extends DrawsGraphic{
+public class TheSea extends Background{
 
     private Color ColorWater ;
 
-    public TheSea(int x, int y,Color ColorWater) {
-        super(x, y, 900,600);
-        this.ColorWater = ColorWater ;
+    public TheSea(int x, int y) {
+        super(x, y);
+        this.ColorWater = Color.web("#B6D7FA") ;
 
     }
 

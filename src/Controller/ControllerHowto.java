@@ -11,7 +11,8 @@ public class ControllerHowto {
         howtoArea.setEditable(false);
         howtoArea.appendText("\t\t\t\t\tHow to\n\n");
         howtoArea.appendText("\tผู้ใช้สามารถ เคลื่อนไหวObject เรือ \n\n");
-        howtoArea.appendText("\tโดยการกดปุ่ม W,A,S,D และสามารถคลิกเลือกเรือ\n\n\tลำอื่นเพื่อเคลื่อนไหวได้\n\n\tกดปุ่มลูกศรขึ้น และ ปุ่มลูกศรลง เพื่อ เพิ่มลดความเร็ว \n\n");
-        howtoArea.appendText("\tกดปุ่ม Play เพื่อเล่นAnimation");
+        howtoArea.appendText("\tโดยการกดปุ่ม W,A,S,D และสามารถคลิกเลือกเรือ\n\n\tลำอื่นเพื่อเคลื่อนไหวได้\n\n\tกดปุ่มลูกศรขึ้น และ ปุ่มลูกศรลง เพื่อ " +
+                "เพิ่มลดความเร็ว \n\n\tโดยSailBoat จะสามารถเพิ่มความเร็วได้ แต่ FishingBoatไม่สามารถเพิ่มความเร็วได้");
+        howtoArea.appendText("\n\n\tกดปุ่ม Play เพื่อเล่นAnimation");
     }
 }

@@ -21,20 +21,19 @@ public class Boat extends DrawsGraphic {
 
     public void drawBodyBoat() {
         GraphicsContext gc = getGraphicsContext2D();
-        double[] lstx = {100, 80, 200, 180};
-        double[] lsty = {280, 250, 250, 280};
+        double[] x = {100, 80, 200, 180};
+        double[] y = {280, 250, 250, 280};
         gc.setFill(ColorRoof);
         gc.setLineWidth(2);
         gc.fillRoundRect(100, 225, 60, 30, 10, 10);
         gc.strokeRoundRect(100, 225, 60, 30, 10, 10);
         gc.setFill(ColorBody);
-        gc.fillPolygon(lstx, lsty, 4);
-        gc.strokePolygon(lstx, lsty, 4);
+        gc.fillPolygon(x, y, 4);
+        gc.strokePolygon(x, y, 4);
     }
 
     public void goRight() {
         setTranslateX(getTranslateX() + speed);
-
     }
 
     public void goLeft() {

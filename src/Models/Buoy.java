@@ -35,14 +35,11 @@ public class Buoy extends DrawsGraphic implements Animation{
         Color c = Color.RED;
         double[] lstx = {170, 234, 234};
         double[] lsty = {170, 170, 130};
-
         gc.setStroke(Color.BLACK);
         gc.setFill(c);
         gc.setLineWidth(4);
-
         gc.strokePolygon(lstx, lsty, 3);
         gc.fillPolygon(lstx, lsty, 3);
-
         gc.strokeLine(235, 120, 235, 235);
     }
 

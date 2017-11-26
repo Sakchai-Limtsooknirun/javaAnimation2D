@@ -47,8 +47,8 @@ public class TheSun extends DrawsGraphic implements Animation{
         ScaleTransition st = new ScaleTransition(
                 Duration.millis(9000), this
         );
-        st.setToX(0);
-        st.setToY(0);
+        st.setToX(0.3);
+        st.setToY(0.3);
         st.setCycleCount(Timeline.INDEFINITE);
         st.setAutoReverse(true);
         st.play();
