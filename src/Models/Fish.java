@@ -6,12 +6,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class Fishs extends Animals implements Animation{
+public class Fish extends Animals implements Animation{
     private Color BodyFish ;
     private Color FinColor ;
     private Color TailColor ;
 
-    public Fishs(int x, int y,Color BodyFish) {
+    public Fish(int x, int y, Color BodyFish) {
         super(x, y);
         this.BodyFish = BodyFish ;
         FinColor = Color.web("#00bfff");

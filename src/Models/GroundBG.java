@@ -3,11 +3,11 @@ package Models;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class TheGround extends Background {
+public class GroundBG extends Background {
 
     private Color ColorGround;
 
-    public TheGround(int x, int y) {
+    public GroundBG(int x, int y) {
         super(x, y);
         ColorGround = Color.web("#c2b280");
     }

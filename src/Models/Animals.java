@@ -12,6 +12,9 @@ public class Animals extends DrawsGraphic{
     @Override
     public void draw() {
 
-    }
 
+    }
+    public void setColorBody(Color colorBody) {
+        ColorBody = colorBody;
+    }
 }

@@ -6,10 +6,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class TheSky extends Background implements Animation{
+public class SkyBG extends Background implements Animation{
     private Color ColorSky ;
 
-    public TheSky(int x, int y) {
+    public SkyBG(int x, int y) {
         super(x, y);
         this.ColorSky = Color.web("#faf2b3") ;
     }
