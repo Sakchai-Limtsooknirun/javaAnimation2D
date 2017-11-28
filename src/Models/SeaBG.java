@@ -5,11 +5,11 @@ import javafx.scene.paint.Color;
 
 public class SeaBG extends Background{
 
-    private Color ColorWater ;
+    private Color colorWater;
 
-    public SeaBG(int x, int y) {
-        super(x, y);
-        this.ColorWater = Color.web("#B6D7FA") ;
+    public SeaBG(int x, int y,Color colorSea) {
+        super(x, y,Color.BLACK);
+        this.colorWater = colorSea ;
 
     }
 
@@ -20,7 +20,7 @@ public class SeaBG extends Background{
 
     public void drawTheSea(){
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(ColorWater);
+        gc.setFill(colorWater);
         gc.fillRect(0,200,900,200);
     }
 }

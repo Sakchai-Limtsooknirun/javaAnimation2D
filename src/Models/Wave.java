@@ -10,9 +10,12 @@ import javafx.util.Duration;
 
 public class Wave extends DrawsGraphic implements Animation{
 
-
-    public Wave(int x, int y) {
+    private Color colorStrokeWave ;
+    private int waveWidth ;
+    public Wave(int x, int y,Color colorStrokeWave , int waveWidth) {
         super(x, y,900,600);
+        this.colorStrokeWave = colorStrokeWave ;
+        this.waveWidth = waveWidth ;
     }
 
     @Override
@@ -22,8 +25,8 @@ public class Wave extends DrawsGraphic implements Animation{
 
     public void drawWave() {
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setLineWidth(3);
-        gc.setStroke(Color.web("#00bfff"));
+        gc.setLineWidth(waveWidth);
+        gc.setStroke(colorStrokeWave);
         int count = 0;
         for (int i = 0; i < 800; i += 60) {
             if (count % 2 == 0) {

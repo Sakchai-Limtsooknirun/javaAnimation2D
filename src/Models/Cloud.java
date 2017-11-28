@@ -8,17 +8,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.util.Duration;
 
-public class Cloud extends DrawsGraphic implements Animation{
+public class Cloud extends DrawsGraphic implements Animation {
 
-    private Color CloudColor;
-    private int HeightCloud;
-    private int WideCloud;
+    private Color cloudColor;
+    private int heightCloud;
+    private int wideCloud;
 
     public Cloud(int x, int y, Color CloudColor, int HeightCloud, int WeiCloud) {
         super(x, y, 300, 300);
-        this.CloudColor = CloudColor;
-        this.HeightCloud = HeightCloud;
-        this.WideCloud = WeiCloud;
+        this.cloudColor = CloudColor;
+        this.heightCloud = HeightCloud;
+        this.wideCloud = WeiCloud;
     }
 
     @Override
@@ -37,22 +37,22 @@ public class Cloud extends DrawsGraphic implements Animation{
     public void drawCloudPart(int x, int y) {
         GraphicsContext gc = getGraphicsContext2D();
         ;
-        gc.setFill(CloudColor);
-        gc.fillArc(x, y, WideCloud, HeightCloud, 0, 180, ArcType.ROUND);
-        gc.fillArc(x, y, WideCloud, HeightCloud, 180, 180, ArcType.ROUND);
-        gc.fillArc(x, y, WideCloud, HeightCloud, 0, 180, ArcType.ROUND);
-        gc.fillArc(x, y, WideCloud, HeightCloud, 180, 180, ArcType.ROUND);
+        gc.setFill(cloudColor);
+        gc.fillArc(x, y, wideCloud, heightCloud, 0, 180, ArcType.ROUND);
+        gc.fillArc(x, y, wideCloud, heightCloud, 180, 180, ArcType.ROUND);
+        gc.fillArc(x, y, wideCloud, heightCloud, 0, 180, ArcType.ROUND);
+        gc.fillArc(x, y, wideCloud, heightCloud, 180, 180, ArcType.ROUND);
 
-        gc.fillArc(x, y + 5, WideCloud, HeightCloud, 0, 180, ArcType.ROUND);
-        gc.fillArc(x, y + 5, WideCloud, HeightCloud, 180, 180, ArcType.ROUND);
-        gc.fillArc(x, y + 5, WideCloud, HeightCloud, 0, 180, ArcType.ROUND);
-        gc.fillArc(x, y + 5, WideCloud, HeightCloud, 180, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 5, wideCloud, heightCloud, 0, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 5, wideCloud, heightCloud, 180, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 5, wideCloud, heightCloud, 0, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 5, wideCloud, heightCloud, 180, 180, ArcType.ROUND);
 
 
-        gc.fillArc(x, y + 15, WideCloud, HeightCloud, 0, 180, ArcType.ROUND);
-        gc.fillArc(x, y + 15, WideCloud, HeightCloud, 180, 180, ArcType.ROUND);
-        gc.fillArc(x, y + 15, WideCloud, HeightCloud, 0, 180, ArcType.ROUND);
-        gc.fillArc(x, y + 15, WideCloud, HeightCloud, 180, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 15, wideCloud, heightCloud, 0, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 15, wideCloud, heightCloud, 180, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 15, wideCloud, heightCloud, 0, 180, ArcType.ROUND);
+        gc.fillArc(x, y + 15, wideCloud, heightCloud, 180, 180, ArcType.ROUND);
     }
 
 

@@ -5,11 +5,11 @@ import javafx.scene.paint.Color;
 
 public class GroundBG extends Background {
 
-    private Color ColorGround;
+    private Color colorGround;
 
-    public GroundBG(int x, int y) {
-        super(x, y);
-        ColorGround = Color.web("#c2b280");
+    public GroundBG(int x, int y,Color colorGround) {
+        super(x, y,Color.BLACK);
+        this.colorGround = colorGround;
     }
 
     @Override
@@ -18,7 +18,7 @@ public class GroundBG extends Background {
     }
     public void drawGround(){
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(ColorGround);
+        gc.setFill(colorGround);
         gc.fillRect(0,400,900,200);
     }
 }

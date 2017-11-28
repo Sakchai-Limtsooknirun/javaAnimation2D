@@ -5,17 +5,16 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.ArcType;
 import javafx.util.Duration;
 
 public class TheSun extends DrawsGraphic implements Animation{
     private Color lightColor;
-    private Color CenterColor;
+    private Color centerColor;
 
-    public TheSun(int x, int y) {
+    public TheSun(int x, int y,Color lightColor,Color centerColor) {
         super(x, y,900,300);
-        lightColor = Color.web("#ff8000");
-        CenterColor = Color.web("#ffbf00") ;
+        this.lightColor = lightColor;
+        this.centerColor = centerColor ;
     }
 
     @Override
@@ -28,7 +27,7 @@ public class TheSun extends DrawsGraphic implements Animation{
         gc.setFill(lightColor);
         gc.fillOval(100,45,300,250);
         //gc.fillArc(100, 45, 300, 250, 0, 180, ArcType.OPEN);
-        gc.setFill(CenterColor);
+        gc.setFill(centerColor);
         gc.fillOval(170,120,150,100);
         //gc.fillArc(170,120,150,100,0,180,ArcType.OPEN);
     }

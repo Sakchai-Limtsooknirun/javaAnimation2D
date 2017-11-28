@@ -5,12 +5,12 @@ import javafx.scene.paint.Color;
 
 public class Boat extends DrawsGraphic {
     private double speed = 1;
-    private Color ColorBody ;
-    private Color ColorRoof = Color.BLACK;
+    private Color colorBody;
+    private Color colorRoof = Color.BLACK;
 
-    public Boat(int x, int y,Color ColorBody) {
+    public Boat(int x, int y, Color ColorBody) {
         super(x, y, 232, 300);
-        this.ColorBody = ColorBody ;
+        this.colorBody = ColorBody;
     }
 
     @Override
@@ -23,13 +23,18 @@ public class Boat extends DrawsGraphic {
         GraphicsContext gc = getGraphicsContext2D();
         double[] x = {100, 80, 200, 180};
         double[] y = {280, 250, 250, 280};
-        gc.setFill(ColorRoof);
+        gc.setFill(colorRoof);
         gc.setLineWidth(2);
         gc.fillRoundRect(100, 225, 60, 30, 10, 10);
         gc.strokeRoundRect(100, 225, 60, 30, 10, 10);
-        gc.setFill(ColorBody);
+        gc.setFill(colorBody);
         gc.fillPolygon(x, y, 4);
         gc.strokePolygon(x, y, 4);
+        double[] xLine = {90, 93, 190, 192};
+        double[] yLine = {260, 265, 265, 260};
+        gc.setFill(Color.WHITE);
+        gc.strokePolygon(xLine, yLine, 4);
+        gc.fillPolygon(xLine, yLine, 4);
     }
 
     public void goRight() {

@@ -3,180 +3,302 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="619.0">Models.TheSea</node>
-    <node x="634.0" y="575.0">Models.Cloud</node>
-    <node x="1983.875" y="575.0">Models.Fishs</node>
-    <node x="205.0" y="619.0">Models.TheGround</node>
-    <node x="2107.343253968254" y="232.5">Models.Animals</node>
-    <node x="0.0" y="882.0">Controller.Controller</node>
-    <node x="2427.875" y="553.0">Models.BigCrabs</node>
-    <node x="188.32539682539664" y="221.5">Models.Background</node>
-    <node x="1381.0" y="244.0">Models.Animation</node>
-    <node x="803.0" y="882.0">Controller.ControllerInfo</node>
-    <node x="412.0" y="608.0">Models.TheSky</node>
-    <node x="1407.9375" y="0.0">Models.DrawsGraphic</node>
-    <node x="1168.0" y="199.5">Models.CoconutTree</node>
-    <node x="1317.875" y="553.0">Models.SailBoat</node>
-    <node x="2205.875" y="597.5">Models.Buoy</node>
-    <node x="338.0" y="882.0">Models.BoatKeyAction</node>
-    <node x="1761.875" y="597.0">Models.TheSun</node>
-    <node x="895.0" y="498.0">Models.FishingBoat</node>
-    <node x="562.0" y="882.0">Controller.ControllerHowto</node>
-    <node x="1029.0" y="882.0">Main</node>
-    <node x="1539.875" y="619.5">Models.Wave</node>
-    <node x="884.0" y="122.0">Models.Boat</node>
+    <node x="10.5" y="629.0">Models.SeaBG</node>
+    <node x="1513.65625" y="585.0">Models.Cloud</node>
+    <node x="432.65625" y="585.0">Models.Crabs</node>
+    <node x="846.65625" y="596.0">Models.Fish</node>
+    <node x="594.2419921875002" y="220.5">Models.Animals</node>
+    <node x="225.65625" y="629.0">Models.GroundBG</node>
+    <node x="1137.4919921875003" y="1037.0">Controller.Controller</node>
+    <node x="164.90376519097208" y="231.5">Models.Background</node>
+    <node x="1235.90625" y="254.0">Models.Animation</node>
+    <node x="624.65625" y="618.0">Models.SkyBG</node>
+    <node x="241.0" y="1861.0">Controller.ControllerInfo</node>
+    <node x="1504.03125" y="0.0">Models.DrawsGraphic</node>
+    <node x="2677.8125" y="607.0">Models.CoconutTree</node>
+    <node x="2246.65625" y="563.0">Models.SailBoat</node>
+    <node x="1068.65625" y="574.0">Models.Buoy</node>
+    <node x="2468.65625" y="574.0">Models.BoatKeyAction</node>
+    <node x="1291.65625" y="607.0">Models.TheSun</node>
+    <node x="467.0" y="1861.0">Main</node>
+    <node x="2006.65625" y="508.0">Models.FishingBoat</node>
+    <node x="0.0" y="1861.0">Controller.ControllerHowto</node>
+    <node x="1774.65625" y="607.0">Models.Wave</node>
+    <node x="2302.991351996528" y="132.0">Models.Boat</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="Controller.Controller" target="Models.Wave">
+      <point x="50.359375" y="-389.5" />
+      <point x="1334.3513671875003" y="917.0" />
+      <point x="1933.65625" y="917.0" />
+      <point x="53.0" y="70.5" />
+    </edge>
+    <edge source="Models.SeaBG" target="Models.Background">
+      <point x="0.0" y="-48.5" />
+      <point x="103.0" y="488.0" />
+      <point x="186.40376519097208" y="488.0" />
+      <point x="-86.0" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Animation">
+      <point x="-4.578125" y="-389.5" />
+      <point x="1279.4138671875003" y="1017.0" />
+      <point x="1281.15625" y="1017.0" />
+      <point x="1281.15625" y="488.0" />
+      <point x="1314.4618055555557" y="488.0" />
+      <point x="-22.444444444444343" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.SkyBG">
+      <point x="-59.515625" y="-389.5" />
+      <point x="1224.4763671875003" y="927.0" />
+      <point x="675.15625" y="927.0" />
+      <point x="-50.5" y="59.5" />
+    </edge>
     <edge source="Models.TheSun" target="Models.DrawsGraphic">
       <point x="50.5" y="-70.5" />
-      <point x="1913.375" y="478.0" />
-      <point x="2000.906746031746" y="478.0" />
-      <point x="2000.906746031746" y="92.0" />
-      <point x="1504.1875" y="92.0" />
-      <point x="26.25" y="26.0" />
+      <point x="1443.15625" y="488.0" />
+      <point x="1518.731890190972" y="488.0" />
+      <point x="1518.731890190972" y="112.0" />
+      <point x="1567.03125" y="112.0" />
+      <point x="-7.0" y="26.0" />
     </edge>
     <edge source="Models.SailBoat" target="Models.Boat">
-      <point x="-50.5" y="-114.5" />
-      <point x="1368.375" y="448.0" />
-      <point x="1082.0" y="448.0" />
-      <point x="66.0" y="148.0" />
+      <point x="50.5" y="-114.5" />
+      <point x="2398.15625" y="488.0" />
+      <point x="2382.1913519965283" y="488.0" />
+      <point x="-52.799999999999955" y="148.0" />
     </edge>
-    <edge source="Models.TheSky" target="Models.Background">
+    <edge source="Models.Crabs" target="Models.Animals">
+      <point x="0.0" y="-92.5" />
+      <point x="518.65625" y="488.0" />
+      <point x="637.2419921875002" y="488.0" />
+      <point x="-43.0" y="59.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.SailBoat">
+      <point x="77.828125" y="-389.5" />
+      <point x="1361.8201171875003" y="947.0" />
+      <point x="2297.15625" y="947.0" />
+      <point x="-50.5" y="114.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Buoy">
+      <point x="-13.734375" y="-389.5" />
+      <point x="1270.2576171875003" y="877.0" />
+      <point x="1220.15625" y="877.0" />
+      <point x="50.5" y="103.5" />
+    </edge>
+    <edge source="Models.SkyBG" target="Models.Background">
       <point x="-50.5" y="-59.5" />
-      <point x="462.5" y="478.0" />
-      <point x="367.4920634920634" y="478.0" />
-      <point x="71.66666666666669" y="48.5" />
-    </edge>
-    <edge source="Models.TheGround" target="Models.Background">
-      <point x="0.0" y="-48.5" />
-      <point x="298.5" y="478.0" />
-      <point x="295.82539682539664" y="478.0" />
-      <point x="0.0" y="48.5" />
+      <point x="675.15625" y="478.0" />
+      <point x="358.4037651909721" y="478.0" />
+      <point x="86.0" y="48.5" />
     </edge>
     <edge source="Models.SailBoat" target="Models.Animation">
-      <point x="50.5" y="-114.5" />
-      <point x="-12.625" y="26.0" />
+      <point x="-50.5" y="-114.5" />
+      <point x="2297.15625" y="448.0" />
+      <point x="1426.6840277777778" y="448.0" />
+      <point x="89.77777777777783" y="26.0" />
     </edge>
-    <edge source="Models.BigCrabs" target="Models.Animals">
-      <point x="0.0" y="-114.5" />
-      <point x="2512.375" y="438.0" />
-      <point x="2236.343253968254" y="438.0" />
-      <point x="43.0" y="37.5" />
+    <edge source="Controller.Controller" target="Models.Boat">
+      <point x="114.453125" y="-389.5" />
+      <point x="1398.4451171875003" y="987.0" />
+      <point x="2658.15625" y="987.0" />
+      <point x="2658.15625" y="468.0" />
+      <point x="2540.591351996528" y="468.0" />
+      <point x="105.59999999999991" y="148.0" />
     </edge>
     <edge source="Models.Boat" target="Models.DrawsGraphic">
       <point x="0.0" y="-148.0" />
-      <point x="1016.0" y="92.0" />
-      <point x="1451.6875" y="92.0" />
-      <point x="-26.25" y="26.0" />
+      <point x="2434.991351996528" y="92.0" />
+      <point x="1609.03125" y="92.0" />
+      <point x="35.0" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Cloud">
+      <point x="22.890625" y="-389.5" />
+      <point x="1306.8826171875003" y="887.0" />
+      <point x="1573.90625" y="887.0" />
+      <point x="-60.25" y="92.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.TheSun">
+      <point x="13.734375" y="-389.5" />
+      <point x="1297.7263671875003" y="877.0" />
+      <point x="1443.15625" y="877.0" />
+      <point x="50.5" y="70.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.SeaBG">
+      <point x="-123.609375" y="-389.5" />
+      <point x="1160.3826171875003" y="997.0" />
+      <point x="149.25" y="997.0" />
+      <point x="46.25" y="48.5" />
     </edge>
     <edge source="Models.Wave" target="Models.Animation">
-      <point x="-50.5" y="-48.0" />
-      <point x="1590.375" y="478.0" />
-      <point x="1494.625" y="478.0" />
-      <point x="12.625" y="26.0" />
+      <point x="-53.0" y="-70.5" />
+      <point x="1827.65625" y="468.0" />
+      <point x="1381.795138888889" y="468.0" />
+      <point x="44.888888888888914" y="26.0" />
     </edge>
     <edge source="Models.Cloud" target="Models.Animation">
-      <point x="60.25" y="-92.5" />
-      <point x="814.75" y="468.0" />
-      <point x="1418.875" y="468.0" />
-      <point x="-63.125" y="26.0" />
+      <point x="-60.25" y="-92.5" />
+      <point x="1573.90625" y="478.0" />
+      <point x="1359.3506944444443" y="478.0" />
+      <point x="22.444444444444343" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.CoconutTree">
+      <point x="132.765625" y="-389.5" />
+      <point x="1416.7576171875003" y="1007.0" />
+      <point x="2726.0625" y="1007.0" />
+      <point x="-48.25" y="70.5" />
     </edge>
     <edge source="Models.FishingBoat" target="Models.Animation">
-      <point x="55.0" y="-169.5" />
-      <point x="1060.0" y="478.0" />
-      <point x="1444.125" y="478.0" />
-      <point x="-37.875" y="26.0" />
+      <point x="-55.0" y="-169.5" />
+      <point x="2061.65625" y="458.0" />
+      <point x="1404.2395833333333" y="458.0" />
+      <point x="67.33333333333326" y="26.0" />
     </edge>
-    <edge source="Models.Fishs" target="Models.Animation">
-      <point x="-50.5" y="-92.5" />
-      <point x="2034.375" y="458.0" />
-      <point x="1545.125" y="458.0" />
-      <point x="63.125" y="26.0" />
-    </edge>
-    <edge source="Models.TheSea" target="Models.Background">
-      <point x="0.0" y="-48.5" />
-      <point x="92.5" y="478.0" />
-      <point x="224.1587301587299" y="478.0" />
-      <point x="-71.66666666666669" y="48.5" />
+    <edge source="Models.Fish" target="Models.Animals">
+      <point x="-50.5" y="-81.5" />
+      <point x="897.15625" y="448.0" />
+      <point x="723.2419921875002" y="448.0" />
+      <point x="43.0" y="59.5" />
     </edge>
     <edge source="Models.TheSun" target="Models.Animation">
       <point x="-50.5" y="-70.5" />
-      <point x="1812.375" y="468.0" />
-      <point x="1519.875" y="468.0" />
-      <point x="37.875" y="26.0" />
+      <point x="1342.15625" y="488.0" />
+      <point x="1336.90625" y="488.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.GroundBG">
+      <point x="-86.984375" y="-389.5" />
+      <point x="1197.0076171875003" y="957.0" />
+      <point x="365.90625" y="957.0" />
+      <point x="46.75" y="48.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.DrawsGraphic">
+      <point x="123.609375" y="-389.5" />
+      <point x="1407.6013671875003" y="997.0" />
+      <point x="2667.3125" y="997.0" />
+      <point x="2667.3125" y="82.0" />
+      <point x="1623.03125" y="82.0" />
+      <point x="49.0" y="26.0" />
     </edge>
     <edge source="Models.Background" target="Models.DrawsGraphic">
       <point x="0.0" y="-48.5" />
-      <point x="295.82539682539664" y="72.0" />
-      <point x="1416.6875" y="72.0" />
-      <point x="-61.25" y="26.0" />
+      <point x="272.4037651909721" y="82.0" />
+      <point x="1525.03125" y="82.0" />
+      <point x="-49.0" y="26.0" />
     </edge>
     <edge source="Models.Animals" target="Models.DrawsGraphic">
-      <point x="0.0" y="-37.5" />
-      <point x="2193.343253968254" y="82.0" />
-      <point x="1521.6875" y="82.0" />
-      <point x="43.75" y="26.0" />
+      <point x="0.0" y="-59.5" />
+      <point x="680.2419921875002" y="92.0" />
+      <point x="1539.03125" y="92.0" />
+      <point x="-35.0" y="26.0" />
     </edge>
     <edge source="Models.Cloud" target="Models.DrawsGraphic">
-      <point x="-60.25" y="-92.5" />
-      <point x="694.25" y="448.0" />
-      <point x="645.4087301587301" y="448.0" />
-      <point x="645.4087301587301" y="82.0" />
-      <point x="1434.1875" y="82.0" />
-      <point x="-43.75" y="26.0" />
+      <point x="60.25" y="-92.5" />
+      <point x="1694.40625" y="488.0" />
+      <point x="1764.731890190972" y="488.0" />
+      <point x="1764.731890190972" y="112.0" />
+      <point x="1581.03125" y="112.0" />
+      <point x="7.0" y="26.0" />
+    </edge>
+    <edge source="Models.SkyBG" target="Models.Animation">
+      <point x="50.5" y="-59.5" />
+      <point x="776.15625" y="458.0" />
+      <point x="1247.1284722222222" y="458.0" />
+      <point x="-89.77777777777783" y="26.0" />
+    </edge>
+    <edge source="Models.BoatKeyAction" target="Models.Boat">
+      <point x="44.75" y="-103.5" />
+      <point x="2602.90625" y="478.0" />
+      <point x="2487.7913519965277" y="478.0" />
+      <point x="52.799999999999955" y="148.0" />
     </edge>
     <edge source="Models.CoconutTree" target="Models.DrawsGraphic">
       <point x="0.0" y="-70.5" />
-      <point x="1264.5" y="102.0" />
-      <point x="1469.1875" y="102.0" />
-      <point x="-8.75" y="26.0" />
+      <point x="2774.3125" y="72.0" />
+      <point x="1637.03125" y="72.0" />
+      <point x="63.0" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Background">
+      <point x="-105.296875" y="-389.5" />
+      <point x="1178.6951171875003" y="977.0" />
+      <point x="215.15625" y="977.0" />
+      <point x="215.15625" y="488.0" />
+      <point x="272.4037651909721" y="488.0" />
+      <point x="0.0" y="48.5" />
     </edge>
     <edge source="Models.Buoy" target="Models.DrawsGraphic">
-      <point x="50.5" y="-70.0" />
-      <point x="2357.375" y="72.0" />
-      <point x="1539.1875" y="72.0" />
-      <point x="61.25" y="26.0" />
+      <point x="-50.5" y="-103.5" />
+      <point x="1119.15625" y="448.0" />
+      <point x="1021.166351996528" y="448.0" />
+      <point x="1021.166351996528" y="102.0" />
+      <point x="1553.03125" y="102.0" />
+      <point x="-21.0" y="26.0" />
     </edge>
-    <edge source="Models.TheSky" target="Models.Animation">
-      <point x="50.5" y="-59.5" />
-      <point x="563.5" y="458.0" />
-      <point x="1393.625" y="458.0" />
-      <point x="-88.375" y="26.0" />
+    <edge source="Controller.Controller" target="Models.Crabs">
+      <point x="-68.671875" y="-389.5" />
+      <point x="1215.3201171875003" y="937.0" />
+      <point x="561.65625" y="937.0" />
+      <point x="43.0" y="92.5" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.Fish">
+      <point x="-41.203125" y="-389.5" />
+      <point x="1242.7888671875003" y="907.0" />
+      <point x="897.15625" y="907.0" />
+      <point x="-50.5" y="81.5" />
+    </edge>
+    <edge source="Models.GroundBG" target="Models.Background">
+      <point x="0.0" y="-48.5" />
+      <point x="319.15625" y="488.0" />
+      <point x="315.4037651909721" y="488.0" />
+      <point x="43.0" y="48.5" />
     </edge>
     <edge source="Models.Wave" target="Models.DrawsGraphic">
-      <point x="50.5" y="-48.0" />
-      <point x="1691.375" y="478.0" />
-      <point x="1778.906746031746" y="478.0" />
-      <point x="1778.906746031746" y="102.0" />
-      <point x="1486.6875" y="102.0" />
-      <point x="8.75" y="26.0" />
-    </edge>
-    <edge source="Models.Fishs" target="Models.Animals">
-      <point x="50.5" y="-92.5" />
-      <point x="2135.375" y="478.0" />
-      <point x="2150.343253968254" y="478.0" />
-      <point x="-43.0" y="37.5" />
+      <point x="53.0" y="-70.5" />
+      <point x="1933.65625" y="488.0" />
+      <point x="2003.981890190972" y="488.0" />
+      <point x="2003.981890190972" y="102.0" />
+      <point x="1595.03125" y="102.0" />
+      <point x="21.0" y="26.0" />
     </edge>
     <edge source="Models.FishingBoat" target="Models.Boat">
-      <point x="-55.0" y="-169.5" />
-      <point x="-66.0" y="148.0" />
+      <point x="55.0" y="-169.5" />
+      <point x="2171.65625" y="488.0" />
+      <point x="2329.391351996528" y="488.0" />
+      <point x="-105.59999999999991" y="148.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.BoatKeyAction">
+      <point x="96.140625" y="-389.5" />
+      <point x="1380.1326171875003" y="967.0" />
+      <point x="2513.40625" y="967.0" />
+      <point x="-44.75" y="103.5" />
+    </edge>
+    <edge source="Models.Fish" target="Models.Animation">
+      <point x="50.5" y="-81.5" />
+      <point x="998.15625" y="468.0" />
+      <point x="1269.5729166666667" y="468.0" />
+      <point x="-67.33333333333326" y="26.0" />
+    </edge>
+    <edge source="Controller.Controller" target="Models.FishingBoat">
+      <point x="59.515625" y="-389.5" />
+      <point x="1343.5076171875003" y="927.0" />
+      <point x="2061.65625" y="927.0" />
+      <point x="-55.0" y="169.5" />
     </edge>
     <edge source="Models.Buoy" target="Models.Animation">
-      <point x="-50.5" y="-70.0" />
-      <point x="2256.375" y="448.0" />
-      <point x="1570.375" y="448.0" />
-      <point x="88.375" y="26.0" />
+      <point x="50.5" y="-103.5" />
+      <point x="1220.15625" y="478.0" />
+      <point x="1292.017361111111" y="478.0" />
+      <point x="-44.888888888888914" y="26.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.3868746182901851" x="1305.566760645139" y="444.6709449735986" />
+  <settings layout="Hierarchic Group" zoom="0.4058501486500149" x="1220.3100881125138" y="493.44940122551077" />
   <SelectedNodes>
     <node>Models.Boat</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
-    <Category>Properties</Category>
     <Category>Methods</Category>
+    <Category>Properties</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

@@ -7,11 +7,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.util.Duration;
 
-public class Buoy extends DrawsGraphic implements Animation{
+public class Buoy extends DrawsGraphic implements Animation {
+    private Color colorBaseBuoy;
+    private Color colorFlag;
+    private Color colorWave;
 
-    public Buoy(int x, int y) {
+    public Buoy(int x, int y, Color colorBaseBuoy, Color colorFlag, Color colorWave) {
         super(x, y, 300, 300);
+        this.colorBaseBuoy = colorBaseBuoy;
+        this.colorFlag = colorFlag;
+        this.colorWave = colorWave;
     }
+
     @Override
     public void draw() {
         drawWave();
@@ -21,9 +28,9 @@ public class Buoy extends DrawsGraphic implements Animation{
 
     public void drawBuoy() {
         GraphicsContext gc = getGraphicsContext2D();
-        Color c = Color.YELLOW;
+
         gc.setLineWidth(3);
-        gc.setFill(c);
+        gc.setFill(colorBaseBuoy);
         gc.setStroke(Color.BLACK);
         gc.strokeArc(208, 235, 63, 40, 0, 180, ArcType.OPEN);
         gc.fillArc(208, 235, 63, 40, 0, 180, ArcType.OPEN);
@@ -32,11 +39,10 @@ public class Buoy extends DrawsGraphic implements Animation{
 
     public void drawFlag() {
         GraphicsContext gc = getGraphicsContext2D();
-        Color c = Color.RED;
         double[] lstx = {170, 234, 234};
         double[] lsty = {170, 170, 130};
         gc.setStroke(Color.BLACK);
-        gc.setFill(c);
+        gc.setFill(colorFlag);
         gc.setLineWidth(4);
         gc.strokePolygon(lstx, lsty, 3);
         gc.fillPolygon(lstx, lsty, 3);
@@ -46,7 +52,7 @@ public class Buoy extends DrawsGraphic implements Animation{
     public void drawWave() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(3);
-        gc.setStroke(Color.web("#00bfff"));
+        gc.setStroke(colorWave);
         gc.strokeArc(210, 235, 55, 35, 180, 180, ArcType.OPEN);
         gc.strokeArc(213, 232, 50, 30, 180, 180, ArcType.OPEN);
         gc.strokeArc(216, 229, 47, 27, 180, 180, ArcType.OPEN);

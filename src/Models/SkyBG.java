@@ -7,11 +7,11 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class SkyBG extends Background implements Animation{
-    private Color ColorSky ;
+    private Color colorSky;
 
-    public SkyBG(int x, int y) {
-        super(x, y);
-        this.ColorSky = Color.web("#faf2b3") ;
+    public SkyBG(int x, int y,Color colorSky) {
+        super(x, y,Color.BLACK);
+        this.colorSky = colorSky ;
     }
 
     @Override
@@ -21,7 +21,7 @@ public class SkyBG extends Background implements Animation{
 
     public void drawTheSky(){
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(ColorSky);
+        gc.setFill(colorSky);
         gc.fillRect(0,0,900,200);
     }
 

@@ -4,11 +4,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Background extends DrawsGraphic {
-    public Color ColorBG ;
+    public Color colorBG;
 
-    public Background(int x, int y) {
+    public Background(int x, int y,Color colorBG) {
         super(x, y,900,600);
-        ColorBG = Color.BLACK ;
+        this.colorBG = colorBG ;
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Background extends DrawsGraphic {
     }
     private void drawBackground(){
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(ColorBG);
+        gc.setFill(colorBG);
         gc.fillRect(0,0,900,600);
 
     }

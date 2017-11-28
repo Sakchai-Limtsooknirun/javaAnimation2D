@@ -8,16 +8,16 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class SailBoat extends Boat implements Animation{
-    private String Logo;
-    private Color ColorSail ;
-    private Color ColorWindow = Color.web("#ffffff");
-    private Color ColorFont  ;
+    private String logo;
+    private Color colorSail;
+    private Color colorWindow = Color.web("#ffffff");
+    private Color colorFont;
 
-    public SailBoat(int x, int y, String Logo,Color ColorText ,Color ColorSail) {
-        super(x, y,Color.web("#ff00bf"));
-        this.Logo = Logo;
-        this.ColorSail = ColorSail ;
-        this.ColorFont = ColorText ;
+    public SailBoat(int x, int y,Color BodyColor ,String Logo,Color ColorText ,Color ColorSail) {
+        super(x, y,BodyColor);
+        this.logo = Logo;
+        this.colorSail = ColorSail ;
+        this.colorFont = ColorText ;
     }
 
     @Override
@@ -31,8 +31,8 @@ public class SailBoat extends Boat implements Animation{
     public void drawLogo() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(1);
-        gc.setStroke(ColorFont);
-        gc.strokeText(Logo, 140, 210);
+        gc.setStroke(colorFont);
+        gc.strokeText(logo, 140, 210);
     }
 
     public void drawSail() {
@@ -42,7 +42,7 @@ public class SailBoat extends Boat implements Animation{
         double[] listSailx2 = {50, 137, 137};
         double[] listSaily2 = {215, 215, 95};
         gc.setStroke(Color.BLACK);
-        gc.setFill(ColorSail);
+        gc.setFill(colorSail);
         gc.setLineWidth(3);
         gc.strokePolygon(listSailx1, listSaily1, 3);
         gc.fillPolygon(listSailx1, listSaily1, 3);
@@ -55,7 +55,7 @@ public class SailBoat extends Boat implements Animation{
 
     public void drawWindow() {
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(ColorWindow);
+        gc.setFill(colorWindow);
         gc.setLineWidth(2);
         gc.fillOval(110, 230, 17, 17);
         gc.fillOval(135, 230, 17, 17);
