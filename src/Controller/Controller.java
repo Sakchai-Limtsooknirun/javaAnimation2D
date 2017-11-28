@@ -187,14 +187,14 @@ public class Controller {
 
     @FXML
     public void InfoBtn(ActionEvent event) throws IOException {
-        FXMLLoader root = new FXMLLoader(getClass().getResource("/Views/infoView.fxml"));
+        FXMLLoader root = new FXMLLoader(getClass().getResource("/Views/InfoView.fxml"));
         NewStage(root, "Information");
 
     }
 
     @FXML
     public void HowtoBtn(ActionEvent event) throws IOException {
-        FXMLLoader root = new FXMLLoader(getClass().getResource("/Views/howtoView.fxml"));
+        FXMLLoader root = new FXMLLoader(getClass().getResource("/Views/HowtoView.fxml"));
         NewStage(root, "How to");
     }
 
