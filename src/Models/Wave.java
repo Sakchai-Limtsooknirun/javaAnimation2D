@@ -23,7 +23,7 @@ public class Wave extends DrawsGraphic implements Animation{
         drawWave();
     }
 
-    public void drawWave() {
+    protected void drawWave() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(waveWidth);
         gc.setStroke(colorStrokeWave);

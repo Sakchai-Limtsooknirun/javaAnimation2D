@@ -29,14 +29,16 @@ public class FishingBoat extends Boat implements Animation{
 
     @Override
     public void draw() {
-        this.drawBodyBoat();
-        this.drawWindow();
-        this.drawLadder();
-        this.drawMast();
-        this.drawFishBillBoard();
+        drawRoof();
+        drawBodyBoat();
+        drawWindow();
+        drawLadder();
+        drawMast();
+        drawFishBillBoard();
+
     }
 
-
+    @Override
     public void drawWindow() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(colorWindow);
@@ -47,7 +49,7 @@ public class FishingBoat extends Boat implements Animation{
 
     }
 
-    public void drawLadder() {
+    protected void drawLadder() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(colorLadder);
         gc.strokeLine(150, 250, 150, 280);
@@ -57,7 +59,7 @@ public class FishingBoat extends Boat implements Animation{
 
     }
 
-    public void drawMast() {
+    protected void drawMast() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(colorMast);
         gc.strokeLine(95, 200, 95, 250);
@@ -72,7 +74,7 @@ public class FishingBoat extends Boat implements Animation{
     }
 
 
-    public void drawFishBillBoard() {
+    protected void drawFishBillBoard() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(colorBillBoardFish);
         gc.fillRoundRect(80, 160, 100, 40, 20, 20);

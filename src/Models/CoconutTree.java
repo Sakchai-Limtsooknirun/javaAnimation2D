@@ -8,16 +8,16 @@ public class CoconutTree extends DrawsGraphic {
     private int treeHeight;
     private int yHeight = 150;
 
-    public CoconutTree(int x, int y, int TreeHeight) {
+    public CoconutTree(int x, int y, int treeHeight) {
         super(x, y, 500, 900);
 
-        if (TreeHeight > 16) {
-            TreeHeight = 16;
-            this.treeHeight = TreeHeight;
-        } else if (TreeHeight < 7) {
-            TreeHeight = 7;
-            this.treeHeight = TreeHeight;
-        } else this.treeHeight = TreeHeight;
+        if (treeHeight > 16) {
+            treeHeight = 16;
+            this.treeHeight = treeHeight;
+        } else if (treeHeight < 7) {
+            treeHeight = 7;
+            this.treeHeight = treeHeight;
+        } else this.treeHeight = treeHeight;
     }
 
     public void draw() {
@@ -26,7 +26,7 @@ public class CoconutTree extends DrawsGraphic {
 
     }
 
-    public void drawBody() {
+    protected void drawBody() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(Color.rgb(206, 142, 43));
         gc.strokeRoundRect(0, 170, 80, 20, 90, 90);
@@ -40,7 +40,7 @@ public class CoconutTree extends DrawsGraphic {
         }
     }
 
-    public void drawCoconut() {
+    protected void drawCoconut() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(Color.rgb(29, 220, 7));
 

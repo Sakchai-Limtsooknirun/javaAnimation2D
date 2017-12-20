@@ -26,7 +26,7 @@ public class Cloud extends DrawsGraphic implements Animation {
         drawCloud();
     }
 
-    public void drawCloud() {
+    protected void drawCloud() {
         drawCloudPart(0, 45);
         drawCloudPart(40, 45);
         drawCloudPart(80, 45);
@@ -34,9 +34,9 @@ public class Cloud extends DrawsGraphic implements Animation {
 
     }
 
-    public void drawCloudPart(int x, int y) {
+    protected void drawCloudPart(int x, int y) {
         GraphicsContext gc = getGraphicsContext2D();
-        ;
+
         gc.setFill(cloudColor);
         gc.fillArc(x, y, wideCloud, heightCloud, 0, 180, ArcType.ROUND);
         gc.fillArc(x, y, wideCloud, heightCloud, 180, 180, ArcType.ROUND);

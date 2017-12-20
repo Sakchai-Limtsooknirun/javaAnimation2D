@@ -26,9 +26,8 @@ public class Buoy extends DrawsGraphic implements Animation {
         drawFlag();
     }
 
-    public void drawBuoy() {
+    protected void drawBuoy() {
         GraphicsContext gc = getGraphicsContext2D();
-
         gc.setLineWidth(3);
         gc.setFill(colorBaseBuoy);
         gc.setStroke(Color.BLACK);
@@ -37,7 +36,7 @@ public class Buoy extends DrawsGraphic implements Animation {
 
     }
 
-    public void drawFlag() {
+    protected void drawFlag() {
         GraphicsContext gc = getGraphicsContext2D();
         double[] lstx = {170, 234, 234};
         double[] lsty = {170, 170, 130};
@@ -49,7 +48,7 @@ public class Buoy extends DrawsGraphic implements Animation {
         gc.strokeLine(235, 120, 235, 235);
     }
 
-    public void drawWave() {
+    protected void drawWave() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(3);
         gc.setStroke(colorWave);

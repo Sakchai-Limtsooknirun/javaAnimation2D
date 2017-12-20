@@ -1,0 +1,14 @@
+1)Animal.java แก้ไขAccessControl ของ attribute เป็น Private และเพิ่ม Method drawEye ทำให้Subclass คือ Crab.java และ Fish.java มี methodจากsuper ที่ใช้ร่วมกัน
+
+2)Crab.java , Fish.java แก้ไขการใช้ attribute ที่สืบทอดมาจาก Animal.java ให้ใช้ method get แทนเนื่องจากเปลี่ยนเป็น private แล้ว
+
+3)Boat.java เพิ่ม method drawWindow,drawRoof
+
+4)SailBoat.java แก้ไขให้มีการOverride ที่ method drawWindow,drawBodyBoat เพื่อให้มีการทำงานที่แตกต่างกับSuperclass และมี drawRoof ที่มีการทำงานเหมือนเดิมกับ SuperClass
+
+5)FishingBoat.java แก้ไขให้มีการOverride ที่ method drawWindow เพื่อให้มีการทำงานที่แตกต่างกับSuperclass และมี drawRoof ที่มีการทำงานเหมือนเดิมกับ SuperClass
+
+6)ลบ Classดังนี้ Background.java , GroundBG.java , SeaBG.java , SkyBG.java เนื่องจากทั้ง4คลาสนี้ไม่จำเป็นต้องมีการสืบทอด แต่มีความซ้ำซ้อน จึง ได้เพิ่ม 2 Class ดังนี้คือ1BackGround 2AllBG เพื่อให้เกิดReuseCodeโดยAllBG ถูกNew และ ส่งเข้าไปในClass BackGround ผ่านConstructorและClass BackGroundจะทำหน้าที่ draw classAllBG แต่ละแบบที่ถูกส่งเข้ามา
+
+7)แก้ไขAccessControl และ ชื่อ attribute ที่ไม่ถูกหลักในทุกคลาส
+

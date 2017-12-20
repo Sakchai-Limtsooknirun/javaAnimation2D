@@ -22,14 +22,13 @@ public class TheSun extends DrawsGraphic implements Animation{
         DrawSun();
     }
 
-    public void DrawSun() {
+    protected void DrawSun() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(lightColor);
         gc.fillOval(100,45,300,250);
-        //gc.fillArc(100, 45, 300, 250, 0, 180, ArcType.OPEN);
         gc.setFill(centerColor);
         gc.fillOval(170,120,150,100);
-        //gc.fillArc(170,120,150,100,0,180,ArcType.OPEN);
+
     }
 
     @Override

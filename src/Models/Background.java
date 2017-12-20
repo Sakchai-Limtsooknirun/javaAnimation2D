@@ -1,27 +1,17 @@
 package Models;
 
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
-
 public class Background extends DrawsGraphic {
-    public Color colorBG;
+    private AllBG allBG;
 
-    public Background(int x, int y,Color colorBG) {
-        super(x, y,900,600);
-        this.colorBG = colorBG ;
+    public Background(AllBG allBG) {
+        super(0,0,900,600);
+        this.allBG = allBG;
     }
-
     @Override
-    public void draw() {
-        drawBackground();
+    public void draw(){
+        allBG.setGc(getGraphicsContext2D());
+        allBG.drawBG();
 
     }
-    private void drawBackground(){
-        GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(colorBG);
-        gc.fillRect(0,0,900,600);
-
-    }
-
 
 }

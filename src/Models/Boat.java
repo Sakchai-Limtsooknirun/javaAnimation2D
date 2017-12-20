@@ -7,10 +7,11 @@ public class Boat extends DrawsGraphic {
     private double speed = 1;
     private Color colorBody;
     private Color colorRoof = Color.BLACK;
+    private Color colorWindow = Color.WHITE;
 
-    public Boat(int x, int y, Color ColorBody) {
-        super(x, y, 232, 300);
-        this.colorBody = ColorBody;
+    public Boat(int x, int y, Color colorBody) {
+        super(x, y, 232, 350);
+        this.colorBody = colorBody;
     }
 
     @Override
@@ -19,14 +20,19 @@ public class Boat extends DrawsGraphic {
 
     }
 
-    public void drawBodyBoat() {
+    protected Color getColorRoof() {
+        return colorRoof;
+    }
+
+    protected Color getColorBody() {
+        return colorBody;
+    }
+
+    protected void drawBodyBoat() {
         GraphicsContext gc = getGraphicsContext2D();
         double[] x = {100, 80, 200, 180};
         double[] y = {280, 250, 250, 280};
-        gc.setFill(colorRoof);
-        gc.setLineWidth(2);
-        gc.fillRoundRect(100, 225, 60, 30, 10, 10);
-        gc.strokeRoundRect(100, 225, 60, 30, 10, 10);
+
         gc.setFill(colorBody);
         gc.fillPolygon(x, y, 4);
         gc.strokePolygon(x, y, 4);
@@ -35,6 +41,19 @@ public class Boat extends DrawsGraphic {
         gc.setFill(Color.WHITE);
         gc.strokePolygon(xLine, yLine, 4);
         gc.fillPolygon(xLine, yLine, 4);
+    }
+    protected void drawWindow(){
+        GraphicsContext gc = getGraphicsContext2D();
+        gc.setFill(colorWindow);
+        gc.setLineWidth(2);
+        gc.fillOval(122, 230, 17, 17);
+    }
+    protected void drawRoof(){
+        GraphicsContext gc = getGraphicsContext2D();
+        gc.setFill(colorRoof);
+        gc.setLineWidth(2);
+        gc.fillRoundRect(100, 225, 60, 30, 10, 10);
+        gc.strokeRoundRect(100, 225, 60, 30, 10, 10);
     }
 
     public void goRight() {

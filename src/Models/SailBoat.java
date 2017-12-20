@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.ArcType;
 import javafx.util.Duration;
 
 public class SailBoat extends Boat implements Animation{
@@ -23,19 +24,20 @@ public class SailBoat extends Boat implements Animation{
     @Override
     public void draw() {
         drawSail();
-        super.draw();
+        drawRoof();
+        drawBodyBoat();
         drawWindow();
         drawLogo();
 
     }
-    public void drawLogo() {
+    protected void drawLogo() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setLineWidth(1);
         gc.setStroke(colorFont);
         gc.strokeText(logo, 140, 210);
     }
 
-    public void drawSail() {
+    protected void drawSail() {
         GraphicsContext gc = getGraphicsContext2D();
         double[] listSailx1 = {140, 230, 140};
         double[] listSaily1 = {215, 215, 95};
@@ -52,7 +54,7 @@ public class SailBoat extends Boat implements Animation{
 
 
     }
-
+    @Override
     public void drawWindow() {
         GraphicsContext gc = getGraphicsContext2D();
         gc.setFill(colorWindow);
@@ -64,6 +66,20 @@ public class SailBoat extends Boat implements Animation{
 
     }
 
+
+    @Override
+    public void drawBodyBoat() {
+        GraphicsContext gc = getGraphicsContext2D();
+
+        gc.setFill(super.getColorBody());
+        gc.strokeArc(90,215,102,80,180,180, ArcType.CHORD);
+        gc.fillArc(90,215,102,80,180,180,ArcType.CHORD);
+        double[] xLine = {90, 93, 190, 192};
+        double[] yLine = {260, 265, 265, 260};
+        gc.setFill(Color.WHITE);
+        gc.strokePolygon(xLine, yLine, 4);
+        gc.fillPolygon(xLine, yLine, 4);
+    }
 
     @Override
     public void StartAnimation() {

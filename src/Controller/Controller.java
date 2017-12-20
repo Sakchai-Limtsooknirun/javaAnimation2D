@@ -2,6 +2,8 @@ package Controller;
 
 import Models.*;
 import javafx.animation.AnimationTimer;
+import javafx.animation.FadeTransition;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,9 +23,6 @@ import java.util.ArrayList;
 public class Controller {
     protected SailBoat sailBoat;
     protected FishingBoat fishingBoat;
-    protected Background bg;
-    protected SkyBG skyBG;
-    protected GroundBG groundBG;
     protected CoconutTree coconutTree, coconutTree2, coconutTree3;
     protected Cloud cloud, cloud2, cloud3, cloud4;
     protected TheSun theSun;
@@ -30,7 +30,7 @@ public class Controller {
     protected Buoy buoy;
     protected Crabs bigCrabs, bigCrabs2;
     protected Fish fishes, fishesTuna, fishesSalmon;
-    protected SeaBG seaBG;
+    protected Background background, ground , sea , sky ;
     private boolean statusOn = false;
     private ArrayList<DrawsGraphic> ListObj;
     private BoatKeyAction boatKeyAction;
@@ -40,11 +40,11 @@ public class Controller {
 
     public void initialize() {
         ListObj = new ArrayList<DrawsGraphic>();
-        ListObj.add(bg = new Background(0, 0,Color.BLACK));
-        ListObj.add(skyBG = new SkyBG(0, 0,Color.web("#faf2b3")));
-        ListObj.add(groundBG = new GroundBG(0, 0,Color.web("#c2b280")));
+        ListObj.add(background = new Background(new AllBG(Color.BLACK,0,0,900,600)));
+        ListObj.add(sky = new Background(new AllBG(Color.web("#faf2b3"),0,0,900,200)));
+        ListObj.add(ground = new Background(new AllBG(Color.web("#c2b280"),0,400,900,200)));
         ListObj.add(theSun = new TheSun(200, 30,Color.web("#ff8000"),Color.web("#ffbf00")));
-        ListObj.add(seaBG = new SeaBG(0, 0,Color.web("#B6D7FA")));
+        ListObj.add(sea = new Background(new AllBG(Color.web("#B6D7FA"),0,200,900,200)));
         ListObj.add(bigCrabs = new Crabs(0, 0,Color.ORANGE,Color.RED));
         ListObj.add(bigCrabs = new Crabs(-35, 65,Color.ORANGE,Color.RED));
         ListObj.add(bigCrabs2 = new Crabs(200, 90,Color.web("#ff8000"),Color.WHITE));
@@ -160,6 +160,7 @@ public class Controller {
     public void Start(ActionEvent event) {
         if (!statusOn) {
             statusOn = true;
+            StartAnimationSkyBg();
             for (DrawsGraphic obj : ListObj) {
                 if (obj instanceof Animation)
                     ((Animation) obj).StartAnimation();
@@ -167,6 +168,16 @@ public class Controller {
         }
     }
 
+    public void StartAnimationSkyBg() {
+        FadeTransition ft = new FadeTransition(
+                Duration.millis(9000), sky
+        );
+        ft.setFromValue(1.0);
+        ft.setToValue(0);
+        ft.setCycleCount(Timeline.INDEFINITE);
+        ft.setAutoReverse(true);
+        ft.play();
+    }
     @FXML
     public void Stop(ActionEvent event) {
         if (statusOn) {
