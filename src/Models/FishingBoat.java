@@ -11,19 +11,17 @@ public class FishingBoat extends Boat implements Animation{
     private double baseSpeeds;
     private Color colorLadder;
     private Color colorMast;
-    private Color colorWindow;
     private String billBoardText;
     private Color colorBillBoardFish;
 
 
-    public FishingBoat(int x, int y,Color bodyColor ,Color colorFish, String billBoardText) {
-        super(x, y,bodyColor);
+    public FishingBoat(int x, int y,Color bodyColor,Color colorWindow,Color colorFish, String billBoardText) {
+        super(x, y,bodyColor,Color.BLACK,colorWindow);
         this.colorBillBoardFish = colorFish;
         this.billBoardText = billBoardText;
         baseSpeeds = 1.0 ;
         colorLadder = Color.BLUEVIOLET;
         colorMast = Color.BLACK;
-        colorWindow = Color.web("#ffffff");
 
     }
 
@@ -41,7 +39,7 @@ public class FishingBoat extends Boat implements Animation{
     @Override
     public void drawWindow() {
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(colorWindow);
+        gc.setFill(getColorWindow());
         gc.setLineWidth(2);
         gc.fillRoundRect(110, 230, 40, 15, 20, 20);
         gc.strokeRoundRect(110, 230, 40, 15, 20, 20);

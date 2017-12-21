@@ -56,8 +56,8 @@ public class Controller {
         ListObj.add(wave2 = new Wave(0, 140,Color.web("#00bfff"),3));
         ListObj.add(wave3 = new Wave(0, 180,Color.web("#00bfff"),3));
         ListObj.add(buoy = new Buoy(-160, -20,Color.YELLOW ,Color.RED ,Color.web("#00bfff")));
-        ListObj.add(fishingBoat = new FishingBoat(550, 0,Color.GOLD, Color.web("#0080ff"), "จับปลา24ช.ม"));
-        ListObj.add(sailBoat = new SailBoat(0, 80, Color.web("#ff00bf"),"ไทยประกันชีวิต", Color.BLACK, Color.web("#ffff00")));
+        ListObj.add(fishingBoat = new FishingBoat(550, 0,Color.GOLD,Color.WHITE, Color.web("#0080ff"), "จับปลา24ช.ม"));
+        ListObj.add(sailBoat = new SailBoat(0, 80, Color.web("#ff00bf"),Color.WHITE,"ไทยประกันชีวิต", Color.BLACK, Color.web("#ffff00")));
         ListObj.add(coconutTree3 = new CoconutTree(620, 290, 13));
         ListObj.add(coconutTree = new CoconutTree(720, 290, 15));
         ListObj.add(coconutTree2 = new CoconutTree(670, 340, 10));

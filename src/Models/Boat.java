@@ -6,18 +6,24 @@ import javafx.scene.paint.Color;
 public class Boat extends DrawsGraphic {
     private double speed = 1;
     private Color colorBody;
-    private Color colorRoof = Color.BLACK;
-    private Color colorWindow = Color.WHITE;
+    private Color colorRoof ;
+    private Color colorWindow ;
 
-    public Boat(int x, int y, Color colorBody) {
+    public Boat(int x, int y, Color colorBody , Color colorRoof ,Color colorWindow) {
         super(x, y, 232, 350);
         this.colorBody = colorBody;
+        this.colorRoof =colorRoof ;
+        this.colorWindow = colorWindow ;
     }
 
     @Override
     public void draw() {
         drawBodyBoat();
 
+    }
+
+    protected Color getColorWindow() {
+        return colorWindow;
     }
 
     protected Color getColorRoof() {

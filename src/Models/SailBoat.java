@@ -11,11 +11,10 @@ import javafx.util.Duration;
 public class SailBoat extends Boat implements Animation{
     private String logo;
     private Color colorSail;
-    private Color colorWindow = Color.web("#ffffff");
     private Color colorFont;
 
-    public SailBoat(int x, int y,Color BodyColor ,String Logo,Color ColorText ,Color ColorSail) {
-        super(x, y,BodyColor);
+    public SailBoat(int x, int y,Color bodyColor ,Color colorWindow,String Logo,Color ColorText ,Color ColorSail) {
+        super(x, y,bodyColor,Color.BLACK, colorWindow);
         this.logo = Logo;
         this.colorSail = ColorSail ;
         this.colorFont = ColorText ;
@@ -57,7 +56,7 @@ public class SailBoat extends Boat implements Animation{
     @Override
     public void drawWindow() {
         GraphicsContext gc = getGraphicsContext2D();
-        gc.setFill(colorWindow);
+        gc.setFill(getColorWindow());
         gc.setLineWidth(2);
         gc.fillOval(110, 230, 17, 17);
         gc.fillOval(135, 230, 17, 17);
@@ -71,7 +70,7 @@ public class SailBoat extends Boat implements Animation{
     public void drawBodyBoat() {
         GraphicsContext gc = getGraphicsContext2D();
 
-        gc.setFill(super.getColorBody());
+        gc.setFill(getColorBody());
         gc.strokeArc(90,215,102,80,180,180, ArcType.CHORD);
         gc.fillArc(90,215,102,80,180,180,ArcType.CHORD);
         double[] xLine = {90, 93, 190, 192};
