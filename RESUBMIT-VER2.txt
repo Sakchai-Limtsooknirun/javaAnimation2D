@@ -7,11 +7,13 @@
 
 3)Boat.java เพิ่ม method drawWindow,drawRoof
 
-4)SailBoat.java แก้ไขให้มีการOverride ที่ method drawWindow,drawBodyBoat เพื่อให้มีการทำงานที่แตกต่างกับSuperclass และมีการเรียกใช้ drawRoof ที่มีการทำงานเหมือนเดิมกับ SuperClass
+4)SailBoat.java แก้ไขให้มีการOverride ที่ method drawWindow,drawBodyBoat และใช้attribute colorWindow,colorBodyBoat ที่สืบทอดมาจากBoat.java และมีการเรียกใช้ drawRoof ที่มีการทำงานเหมือนเดิมกับ SuperClass เพื่อให้มีการทำงานที่แตกต่างโดยการOverride และบางการทำงานที่เหมือนกันกับSuperclass
 
-5)FishingBoat.java แก้ไขให้มีการOverride ที่ method drawWindow เพื่อให้มีการทำงานที่แตกต่างกับSuperclass และมีการเรียกใช้ drawRoof ที่มีการทำงานเหมือนเดิมกับ SuperClass
+5)FishingBoat.java แก้ไขให้มีการOverride ที่ method drawWindow และใช้attribute colorWindow ที่สืบทอดมาจากBoat.java และมีการเรียกใช้ drawRoof ที่มีการทำงานเหมือนเดิมกับ SuperClass เพื่อให้มีการทำงานที่แตกต่างโดยการOverride และบางการทำงานที่เหมือนกันกับSuperclass
 
-6)ลบ Class ดังนี้ Background.java , GroundBG.java , SeaBG.java , SkyBG.java เนื่องจากทั้ง4คลาสนี้ไม่จำเป็นต้องมีการสืบทอด แต่มีความซ้ำซ้อน จึง ได้เพิ่ม 2 Class ดังนี้คือ1BackGround 2AllBG เพื่อให้เกิดReuseCodeโดยAllBG ถูกNewให้มีattributeต่างกัน และ ส่งเข้าไปในClass BackGround ผ่านConstructorจากนั้นClass BackGroundจะทำหน้าที่ draw classAllBG แต่ละแบบที่ถูกส่งเข้ามา(คล้ายๆinterfaceCallBack แต่มีการทำงานแค่แบบเดียวผมเลยไม่ได้ใช้Interface)
+6)ลบ Class ดังนี้ GroundBG.java , SeaBG.java , SkyBG.java เนื่องจากทั้ง4คลาสนี้ไม่จำเป็นต้องมีการสืบทอด แต่มีความซ้ำซ้อน จึง ได้เพิ่ม class AllBG สำหรับวาดและเก็บattributeของbackgroundแต่ละแบบ ส่งเข้าไปในClass Background ผ่านConstructorจากนั้นClass Backgroundจะทำหน้าที่ drawclass AllBG แต่ละแบบที่ถูกส่งเข้ามา(คล้ายๆinterfaceCallBack แต่มีการทำงานแค่แบบเดียวผมเลยไม่ได้ใช้Interface)
+ึ
+7)Background.java แก้ไข เพิ่มให้มีการรับObject ของAllBG และ method draw เป็นการ drawobjectของAllBG ที่ส่งเข้าไป
 
-7)แก้ไขAccessControl และ ชื่อ attribute ที่ไม่ถูกหลักในทุกคลาส
+8)แก้ไขAccessControl และ ชื่อ attribute ที่ไม่ถูกหลักในทุกคลาส
 
